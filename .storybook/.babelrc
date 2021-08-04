@@ -1,0 +1,17 @@
+{
+    "env": {
+    "development" : {
+      "compact": true
+    }
+  },
+  "plugins": [
+    "@babel/plugin-syntax-jsx",
+    [
+      "@babel/plugin-transform-react-jsx",
+      {
+        "pragma": "_j"
+      },
+      "x-jsx-handler"
+    ]
+  ]
+}

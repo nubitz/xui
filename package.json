@@ -1,0 +1,46 @@
+{
+  "name": "xui",
+  "version": "0.0.1",
+  "description": "Stencil Component Starter",
+  "main": "dist/index.cjs.js",
+  "module": "dist/custom-elements/index.js",
+  "es2015": "dist/esm/index.mjs",
+  "es2017": "dist/esm/index.mjs",
+  "types": "dist/custom-elements/index.d.ts",
+  "collection": "dist/collection/collection-manifest.json",
+  "collection:main": "dist/collection/index.js",
+  "unpkg": "dist/xui/xui.esm.js",
+  "files": [
+    "dist/",
+    "loader/"
+  ],
+  "scripts": {
+    "start": "stencil build --dev --watch --serve",
+    "stencil:build": "stencil build --docs",
+    "stecnil:test": "stencil test --spec --e2e",
+    "stencil:test.watch": "stencil test --spec --e2e --watchAll",
+    "stencil:generate": "stencil generate",
+    "storybook:start": "start-storybook -p 6006 -s ./www --no-manager-cache",
+    "storybook:build": "build-storybook",
+    "build:styles": "style-dictionary"
+  },
+  "dependencies": {
+    "@stencil/core": "^2.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.14.8",
+    "@storybook/addon-actions": "^6.3.6",
+    "@storybook/addon-essentials": "^6.1.21",
+    "@storybook/addon-links": "^6.3.6",
+    "@storybook/web-components": "^6.1.21",
+    "@types/jest": "^26.0.24",
+    "@types/puppeteer": "^5.4.3",
+    "babel-loader": "^8.2.2",
+    "jest": "^26.6.3",
+    "jest-cli": "^26.6.3",
+    "npm-run-all": "^4.1.5",
+    "puppeteer": "^5.5.0",
+    "style-dictionary": "^3.0.1"
+  },
+  "license": "MIT"
+}
