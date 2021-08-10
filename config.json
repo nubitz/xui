@@ -1,6 +1,22 @@
 {
   "source": ["tokens/**/*.json"],
   "platforms": {
+      "css": {
+      "transformGroup": "css",
+      "transforms": [
+        "attribute/cti",
+        "name/cti/kebab",
+        "time/seconds",
+        "content/icon",
+        "size/rem",
+        "color/hsl"
+      ],
+      "buildPath": "build/css/",
+      "files": [{
+        "destination": "variables.less",
+        "format": "css/variables"
+      }]
+    },
     "scss": {
       "transformGroup": "scss",
       "buildPath": "build/scss/",
