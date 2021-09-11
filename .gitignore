@@ -26,3 +26,4 @@ Thumbs.db
 UserInterfaceState.xcuserstate
 .env
 components.d.ts
+src/components.d.ts
