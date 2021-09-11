@@ -6,56 +6,60 @@
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first": string;
-        /**
-          * The last name
-         */
-        "last": string;
-        /**
-          * The middle name
-         */
-        "middle": string;
+    interface XContainer {
+        "background": string;
+    }
+    interface XDialog {
+    }
+    interface XPopover {
     }
 }
 declare global {
-    interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
+    interface HTMLXContainerElement extends Components.XContainer, HTMLStencilElement {
     }
-    var HTMLMyComponentElement: {
-        prototype: HTMLMyComponentElement;
-        new (): HTMLMyComponentElement;
+    var HTMLXContainerElement: {
+        prototype: HTMLXContainerElement;
+        new (): HTMLXContainerElement;
+    };
+    interface HTMLXDialogElement extends Components.XDialog, HTMLStencilElement {
+    }
+    var HTMLXDialogElement: {
+        prototype: HTMLXDialogElement;
+        new (): HTMLXDialogElement;
+    };
+    interface HTMLXPopoverElement extends Components.XPopover, HTMLStencilElement {
+    }
+    var HTMLXPopoverElement: {
+        prototype: HTMLXPopoverElement;
+        new (): HTMLXPopoverElement;
     };
     interface HTMLElementTagNameMap {
-        "my-component": HTMLMyComponentElement;
+        "x-container": HTMLXContainerElement;
+        "x-dialog": HTMLXDialogElement;
+        "x-popover": HTMLXPopoverElement;
     }
 }
 declare namespace LocalJSX {
-    interface MyComponent {
-        /**
-          * The first name
-         */
-        "first"?: string;
-        /**
-          * The last name
-         */
-        "last"?: string;
-        /**
-          * The middle name
-         */
-        "middle"?: string;
+    interface XContainer {
+        "background"?: string;
+    }
+    interface XDialog {
+    }
+    interface XPopover {
     }
     interface IntrinsicElements {
-        "my-component": MyComponent;
+        "x-container": XContainer;
+        "x-dialog": XDialog;
+        "x-popover": XPopover;
     }
 }
 export { LocalJSX as JSX };
 declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
-            "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "x-container": LocalJSX.XContainer & JSXBase.HTMLAttributes<HTMLXContainerElement>;
+            "x-dialog": LocalJSX.XDialog & JSXBase.HTMLAttributes<HTMLXDialogElement>;
+            "x-popover": LocalJSX.XPopover & JSXBase.HTMLAttributes<HTMLXPopoverElement>;
         }
     }
 }

@@ -15,7 +15,8 @@
     "loader/"
   ],
   "scripts": {
-    "start": "stencil build --dev --watch --serve",
+    "start": "run-p stencil:start  storybook:start",
+    "stencil:start": "stencil build --dev --watch",
     "stencil:build": "stencil build --docs",
     "stecnil:test": "stencil test --spec --e2e",
     "stencil:test.watch": "stencil test --spec --e2e --watchAll",
@@ -30,12 +31,14 @@
   "devDependencies": {
     "@babel/core": "^7.14.8",
     "@stencil/store": "^1.4.1",
+    "@storybook/addon-a11y": "^6.3.7",
     "@storybook/addon-actions": "^6.3.6",
     "@storybook/addon-essentials": "^6.1.21",
     "@storybook/addon-links": "^6.3.6",
     "@storybook/web-components": "^6.1.21",
     "@types/jest": "^26.0.24",
     "@types/puppeteer": "^5.4.3",
+    "@whitespace/storybook-addon-html": "^5.0.0",
     "babel-loader": "^8.2.2",
     "jest": "^26.6.3",
     "jest-cli": "^26.6.3",
