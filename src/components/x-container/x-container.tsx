@@ -1,18 +1,20 @@
-import { Component, Host, h } from '@stencil/core';
+import { Component, Host, h, Prop } from '@stencil/core';
 
 @Component({
   tag: 'x-container',
   styleUrl: 'x-container.css',
-  shadow: true,
 })
 export class XContainer {
+
+  @Prop() background: string;
 
   render() {
     return (
       <Host>
-        <slot></slot>
+        <div class="inner-wrapper">
+          <slot></slot>
+        </div>
       </Host>
     );
   }
-
 }

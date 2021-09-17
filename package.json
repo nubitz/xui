@@ -26,10 +26,14 @@
     "build:styles": "style-dictionary"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.36",
+    "@fortawesome/free-regular-svg-icons": "^5.15.4",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@stencil/core": "^2.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.14.8",
+    "@stencil/sass": "^1.4.1",
     "@stencil/store": "^1.4.1",
     "@storybook/addon-a11y": "^6.3.7",
     "@storybook/addon-actions": "^6.3.6",
