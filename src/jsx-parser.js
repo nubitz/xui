@@ -3,26 +3,30 @@ export function _j(name, attrs, ...children) {
         const el = document.createElement(name);
         Object.entries(attrs || {}).forEach(
             ([key, value]) => { 
-            if("function" != typeof value) {
-                if("object" == typeof value) {
-                    value = JSON.stringify(value);
-                }
-                key = key.replace(" ", "")
-                .replace(/([A-Z])/g, "-$1")
-                .toLocaleLowerCase();
-                ("boolean" == typeof value) 
-                    ?  value == false 
+                key = key.replace(" ", "").replace(/([A-Z])/g, "-$1").toLocaleLowerCase(); 
+                switch(typeof value) {
+                    case 'object':
+                         value = JSON.stringify(value);
+                         el.setAttribute(key, value);
+                        break;
+                    case 'boolean':
+                        (value == false) 
                         ? el.removeAttribute(key)
                         : el.setAttribute(key,"")
-                    : el.setAttribute(key, value);
-            } else {
-                el[key] = value;
-            }
+                        break;
+                    case 'function':
+                         el[key] = value;
+                    break;
+                    default:
+                        (!value) 
+                            ? el.removeAttribute(key)
+                            : el.setAttribute(key, value);
+                }
         });
         for (const child of children) {  
             ("object" == typeof child) 
                 ? el.appendChild(child)
-                : el.textContent = child;
+                : el.innerHTML += child;
         }
         return el;
     }
