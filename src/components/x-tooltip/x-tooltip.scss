@@ -68,6 +68,8 @@ x-tooltip {
     top: var(--tooltip-top);
     left: var(--tooltip-left);
     transform: translate(var(--tooltip-trans-x,0), var(--tooltip-trans-y, 0));
+    background-color: var(--tooltip-background-color, #fff);
+    padding: 5px;
     border: 1px solid #dadada;
   }
 }

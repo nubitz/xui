@@ -44,7 +44,7 @@ x-button {
   &[variant='none'] {  
     --button-border: none;
     --button-background-color: transparent;
-    --button-font-color: var(--button-color);
+    --button-font-color: var(--button-base-color);
   }
 
   &[elevated] { 

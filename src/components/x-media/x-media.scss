@@ -1,0 +1,25 @@
+x-media {
+  height: inherit;
+  position: absolute; 
+  width: 100%; 
+  height: 100%;
+  top: 0;
+  left: 0;
+  &[overlay] { 
+    background-color: rgba(255, 255, 240, 0.068);
+  }
+  &[center] { 
+    --media-center: 50% 50%; 
+    --media-cover: none;
+  }
+  img {
+    z-index: -1;
+    object-fit: var(--media-cover, cover);
+    object-position: var(--media-center, none);
+    position: absolute; 
+    width: 100%; 
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+}

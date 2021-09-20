@@ -23,10 +23,16 @@ export function _j(name, attrs, ...children) {
                             : el.setAttribute(key, value);
                 }
         });
-        for (const child of children) {  
+        for (const child of children) { 
+            if(child instanceof Array) {
+                child.forEach(node => {
+                    el.appendChild(node);
+                });
+            } else {
             ("object" == typeof child) 
                 ? el.appendChild(child)
                 : el.innerHTML += child;
+            }
         }
         return el;
     }
