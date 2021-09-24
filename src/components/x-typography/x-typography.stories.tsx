@@ -14,16 +14,28 @@ export default {
         variant: {
             control: {
                 type: 'select',
-                options: ['top', 'left', 'bottom', 'right']
+                options: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'title', 'subtitle1', 'subtitle2', 'body1', 'body2', 'caption', "button"]
             }
         }
     },
 };
 
-const Template = (props) => (
-    <x-typography {...props}>
-        Text
-    </x-typography>
+const Template = () => (
+    <div>
+        <x-typography variant="h1" text="h1.Heading" />
+        <x-typography variant="h2" text="h2.Heading" />
+        <x-typography variant="h3" text="h3.Heading" />
+        <x-typography variant="h4" text="h4.Heading" />
+        <x-typography variant="h5" text="h5.Heading" />
+        <x-typography variant="h6" text="h6.Heading" />
+        <x-typography variant="title" text="Title" />
+        <x-typography variant="subtitle1" text="Subtitle 1" />
+        <x-typography variant="subtitle2" text="Subtitle 2" />
+        <x-typography variant="body1" text="body 1 " />
+        <x-typography variant="body2" text="body 2" />
+        <x-typography variant="button" text="Button Text" />
+        <x-typography variant="caption" text="Cation Text" />
+    </div>
 );
 
 export const Typography = Template.bind({});

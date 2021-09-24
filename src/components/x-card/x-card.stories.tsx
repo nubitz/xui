@@ -1,6 +1,5 @@
 import { _j } from "../../jsx-parser";
 import { h } from "@stencil/core";
-
 export default {
     title: 'Card',
     component: 'x-card',
@@ -39,31 +38,27 @@ export default {
         }
     },
 };
+const Template = ({ type, ...props }) => {
+    return (
+        <x-card {...props}>
+            <h2 slot="card-header">HEADER</h2>
+            <div slot="card-body">
+                Id explicabo enim sit facilis totam aut atque voluptatem ut fugit
+                iure qui reiciendis internos non molestiae rerum aut modi dolore.
+                Qui fuga voluptates non quisquam dicta et error nisi non quod fuga.
+            </div>
+            <div slot="card-footer">
+                <x-button variant={type} color="info" slot="tooltip-control">
+                    Button
+                </x-button>
+            </div>
+        </x-card>
+    );
+}
 
-const Template = ({ type, props }) => (
-    <div>
-        <x-container>
-            {[0, 1, 2, 3, 4, 5].map(_ => (
-                <x-card {...props}>
-                    <h2 slot="card-header">HEADER</h2>
-                    <div slot="card-body">
-                        Id explicabo enim sit facilis totam aut atque voluptatem ut fugit iure qui reiciendis internos non molestiae rerum aut modi dolore. Qui fuga voluptates non quisquam dicta et error nisi non quod fuga.
-                    </div>
-                    <div slot="card-footer">
-                        <x-button variant={type} color="info" slot="tooltip-control">
-                            Button
-                        </x-button>
-                    </div>
-                </x-card>
-            ))}
-
-        </x-container>
-    </div>
-);
 export const Card = Template.bind({});
-
 Card.args = {
-    elevated: true,
+    elevated: false,
     rounded: false,
-    type: 'outline'
+    border: false,
 }

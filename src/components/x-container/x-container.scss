@@ -1,15 +1,15 @@
-x-container {
-  display: block;
-  padding: 30px;
-  position: relative;
-  .inner-wrapper { 
-    display: grid;
-    grid-template-columns: repeat(auto-fill , minmax(300px, 1fr));
-    gap: 1rem;
-    max-width: 800px;
 
-    x-card:nth-child(1) { 
-       grid-column: span 2;
-    }
+x-container { 
+  display: flex;
+  position: relative;
+  justify-content: center;
+  width: 100%;
+  .inner-wrapper {
+     width: var(--container-width, 80%);
+     height: var(--container-height, auto);
+     background-color: var(--container-background-color);
+     padding-top: 20px;
+     padding-bottom: 20px;
+     position: relative;
   }
 }

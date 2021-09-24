@@ -3,6 +3,7 @@ import { sass } from '@stencil/sass';
 
 export const config: Config = {
   namespace: 'xui',
+  hashFileNames: true,
   outputTargets: [
     {
       type: 'dist',

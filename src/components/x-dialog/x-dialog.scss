@@ -1,0 +1,8 @@
+x-dialog {
+  &[open] { 
+      --dialog-open: 'block';
+  }
+  &[backdrop] { 
+  }
+  
+}

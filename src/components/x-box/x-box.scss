@@ -1,0 +1,7 @@
+x-box { 
+  display:flex;
+  width: var(--box-width);
+  align-items: var(--box-align-items);
+  justify-content: var(--box-justify-content);
+  align-content: var(--box-align-content);
+}

@@ -1,4 +1,5 @@
 import { Component, Element, Listen, Prop, Host, h } from '@stencil/core';
+import { Placement } from '../../interface';
 import { setCssProperties } from '../../utils';
 
 @Component({
@@ -24,7 +25,7 @@ export class XTooltip {
 
   @Prop({
     reflect: true
-  }) placement: 'top' | 'left' | 'bottom' | 'right' = 'top';
+  }) placement: Placement = 'top';
 
   @Listen('mouseover')
   mouseoverHandler(): void {
@@ -60,7 +61,6 @@ export class XTooltip {
   }
 
   componentDidLoad() {
-
     setCssProperties(this.host, {
       '--tooltip-width': this.width,
       '--tooltip-height': this.height
@@ -89,5 +89,4 @@ export class XTooltip {
       </Host>
     );
   }
-
 }
