@@ -22,9 +22,14 @@ export default {
     },
 };
 
-const Template = () => (
-    <x-container>
-        Conatiner
+const Template = (props) => (
+    <x-container {...props}>
+        CONTENT
     </x-container>
 );
 export const Container = Template.bind({});
+Container.args = {
+    width: '80%',
+    height: '500px',
+    background: "yellow",
+}

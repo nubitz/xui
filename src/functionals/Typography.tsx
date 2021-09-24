@@ -14,11 +14,10 @@ export const Typography: FunctionalComponent<{
         title: 'h2',
         subtitle1: 'h3',
         subtitle2: 'h4',
-        body1: '',
+        body1: 'p',
         body2: 'span',
-        button: '',
-        caption: '',
-        paragraph: 'p'
+        button: 'span',
+        caption: 'span',
     };
     const Tag = variantMap[variant];
     return (

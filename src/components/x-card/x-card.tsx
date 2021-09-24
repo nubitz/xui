@@ -1,4 +1,5 @@
 import { Component, Element, Prop, Host, h } from '@stencil/core';
+import { setCssProperties } from "../../utils";
 
 @Component({
   tag: 'x-card',
@@ -14,7 +15,7 @@ export class XCard {
 
   @Prop({
     reflect: true
-  }) variant: 'default' | 'champion' = 'default'
+  }) border: boolean;
 
   @Prop({
     reflect: true
@@ -24,6 +25,12 @@ export class XCard {
     reflect: true
   }) rounded: boolean;
 
+  constructor() {
+    setCssProperties(this.host, {
+      '--card-width': this.width,
+      '--card-height': this.height
+    });
+  }
 
   render() {
     return (

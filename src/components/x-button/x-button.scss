@@ -69,7 +69,7 @@ x-button {
     box-shadow: var(--button-box-shadow, none);
     background-color: var(--button-background-color, none);
     border: var(--button-border, 1px solid inherit);
-    &:hover, &:focus { 
+    &:hover { 
       color: #fff;
       background-color: blue; // Need to define
     }

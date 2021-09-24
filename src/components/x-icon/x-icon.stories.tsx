@@ -28,9 +28,9 @@ const Template = (props) => (
     <x-icon {...props}></x-icon>
 );
 
-
 export const Icon = Template.bind({});
 
 Icon.args = {
-    name: 'arrow-left'
+    name: 'arrow-left',
+    solid: true
 }

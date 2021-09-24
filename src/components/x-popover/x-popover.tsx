@@ -1,4 +1,5 @@
 import { Component, Element, Listen, Prop, Host, h } from '@stencil/core';
+import { Placement } from '../../interface';
 import { setCssProperties } from '../../utils';
 
 @Component({
@@ -24,7 +25,7 @@ export class XPopover {
 
   @Prop({
     reflect: true
-  }) placement: 'top' | 'left' | 'bottom' | 'right' = 'top';
+  }) placement: Placement = 'top';
 
   openHandler() {
     this.open = !this.open;

@@ -1,5 +1,7 @@
 import { Button } from './Button';
+import { Typography } from './Typography';
 
 export {
-    Button
+    Button,
+    Typography
 }

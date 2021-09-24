@@ -1,5 +1,6 @@
 import { Component, Element, Prop, Host, h } from '@stencil/core';
 import { Button } from '../../functionals';
+import { Colors } from '../../interface';
 import { setCssProperties } from '../../utils';
 
 @Component({
@@ -24,7 +25,7 @@ export class XButton {
 
   @Prop() type: 'submit' | 'button' = 'button';
 
-  @Prop() color: 'primary' | 'secondary' | 'tertiary' | 'success' | 'error' | 'info' | 'warning' = 'secondary';
+  @Prop() color: Colors = 'secondary';
 
   @Prop() variant: 'solid' | 'outlined' | 'none' = 'solid';
 

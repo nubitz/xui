@@ -1,0 +1,65 @@
+x-drawer {
+
+  &[placement="top"] { 
+    --drawer-width: 100%;
+    --drawer-left:0;
+    --drawer-top:0;
+    --drawer-boxshadow: 0px 0px 3px 0px #000;
+    border-bottom: 1px solid #dadada;  
+  }
+  
+  &[placement="left"] { 
+    --drawer-height: 100%;
+    --drawer-left:0;
+    --drawer-top:0;
+    --drawer-boxshadow: 0px 0px 3px 0px #000;
+    border-right: 1px solid #dadada;  
+  }
+  
+  &[placement="bottom"] { 
+    --drawer-bottom: 0;
+    --drawer-left:0;
+    --drawer-width: 100%;
+    --drawer-boxshadow: 0px 0px 3px 0px #000;
+    border-top: 1px solid #dadada; 
+  }
+
+  &[placement="right"] { 
+    --drawer-top: 0;
+    --drawer-right: 0;
+    --drawer-height: 100%;
+    --drawer-boxshadow: 0px 0px 3px 0px #000;
+    border-left: 1px solid #dadada;  
+  }
+  
+  &[open] {
+    --drawer-open: block; 
+  }
+
+ &[overlay] {
+   .drawer-overlay {
+      z-index:1; 
+      left: 0; 
+      top: 0; 
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      background-color: rgba(0, 0, 0, 0.233);
+    }
+  }
+
+ .drawer {
+    z-index:2; 
+    position: var(--drawer-position, fixed);
+    height: var(--drawer-height, auto);
+    width: var(--drawer-width, auto);
+    top: var(--drawer-top);
+    left: var(--drawer-left);
+    right: var(--drawer-right);
+    bottom: var(--drawer-bottom);
+    background-color: var(--drawer-background-color, #fff);
+    box-shadow: var(--drawer-boxshadow);
+    overflow-y: auto;
+ }
+  display: var(--drawer-open, none);
+}
