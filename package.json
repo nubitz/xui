@@ -23,7 +23,7 @@
     "stencil:generate": "stencil generate",
     "storybook:start": "start-storybook -p 6006 -s ./www --no-manager-cache",
     "storybook:build": "build-storybook",
-    "build:styles": "style-dictionary"
+    "build:styles": "style-dictionary build"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
