@@ -1,0 +1,14 @@
+{ 
+    "typography": { 
+        "family": {"value": ""}, 
+        "size": { 
+            "base": { "value": "{size.font.base.value}" },
+            "small": { "value": "{size.font.small.value}" },
+            "medium": { "value": "{size.font.medium.value}" },
+            "large": { "value": "{size.font.large.value}" }
+        },
+        "color": { 
+
+        }
+    }
+}

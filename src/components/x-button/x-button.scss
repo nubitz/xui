@@ -15,19 +15,19 @@ x-button {
   }
 
   &[color='success'] {  
-    --button-base-color: green;
+    --button-base-color: var(--color-light-success);
   }
 
   &[color='info'] {  
-      --button-base-color: blue;
+      --button-base-color: var(--color-light-info);
   } 
   
   &[color='warning'] {  
-    --button-base-color: orange;
+    --button-base-color: var(--color-light-warning);
   }
 
   &[color='error'] { 
-    --button-base-color: red;
+    --button-base-color: var(--color-light-danger);
   } 
 
   &[variant='solid'] {
@@ -68,10 +68,10 @@ x-button {
     border-radius: var(--button-radius, 5px);
     box-shadow: var(--button-box-shadow, none);
     background-color: var(--button-background-color, none);
-    border: var(--button-border, 1px solid inherit);
+    border: var(--button-border, 1px solid --button-background-color);
     &:hover { 
-      color: #fff;
-      background-color: blue; // Need to define
+     // color: #fff;
+    //  background-color: blue; // Need to define
     }
   }
 }

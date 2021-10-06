@@ -16,13 +16,14 @@ x-media {
       --media-index: 0; 
   }
   img {
-    object-fit: var(--media-cover, cover);
-    object-position: var(--media-center, none);
     position: absolute; 
     width: 100%; 
     height: 100%;
     top: 0;
     left: 0;
-    z-index: var(--media-index, 0)
+    object-fit: var(--media-cover, cover);
+    object-position: var(--media-center, none);
+    z-index: var(--media-index, 0);
+    clip-path: var(--media-clip-path, none);
   }
 }

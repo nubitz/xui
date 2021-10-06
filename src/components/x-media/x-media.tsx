@@ -14,13 +14,18 @@ export class XMedia {
     reflect: true
   }) center: boolean;
 
-  @Prop() mediaIndex: number;
+  @Prop({
+    reflect: true
+  }) variant: 'video' | 'img';
 
-  @Prop() variant: 'video' | 'img';
+  @Prop() clipPath: string;
+
+  @Prop() mediaIndex: number;
 
   componentWillRender() {
     setCssProperties(this.host, {
-      '--media-index': `${this.mediaIndex}`
+      '--media-index': `${this.mediaIndex}`,
+      '--media-clip-path': this.clipPath
     })
   }
 

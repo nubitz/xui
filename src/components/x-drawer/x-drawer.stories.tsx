@@ -32,7 +32,7 @@ export default {
 };
 const Template = (props) => (
     <span>
-        <x-drawer namespace="x-drawer-1" placement="top" height="500px" {...props} overlay >
+        <x-drawer namespace="x-drawer-1" placement="top" height="500px" {...props}  >
             <x-typography variant="title" text="TOP" />
         </x-drawer>
         <x-drawer namespace="x-drawer-2" placement="left" width="300px" >
@@ -46,22 +46,22 @@ const Template = (props) => (
         </x-drawer>
         <x-container>
             <x-control name="x-drawer-1" trigger="click,mouseneter">
-                <x-button >
+                <x-button color="warning" variant="solid">
                     Open/Close Drawer 1
                 </x-button>
             </x-control>
             <x-control name="x-drawer-2" trigger="click">
-                <x-button >
+                <x-button color="info" variant="outline">
                     Open/Close Drawer 2
                 </x-button>
             </x-control>
             <x-control name="x-drawer-3" trigger="click">
-                <x-button >
+                <x-button color="error" variant="solid">
                     Open/Close Drawer 3
                 </x-button>
             </x-control>
             <x-control name="x-drawer-4" trigger="click">
-                <x-button >
+                <x-button color="info" variant="solid">
                     Open/Close Drawer 4
                 </x-button>
             </x-control>

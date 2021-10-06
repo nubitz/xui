@@ -1,65 +1,88 @@
 x-drawer {
 
+  //--drawer-boxshadow: 0px 0px 3px 0px #000;
+
   &[placement="top"] { 
     --drawer-width: 100%;
-    --drawer-left:0;
-    --drawer-top:0;
-    --drawer-boxshadow: 0px 0px 3px 0px #000;
-    border-bottom: 1px solid #dadada;  
+    --drawer-left: 0;
+    --drawer-top: 0;
+    --drawer-transform: translate(0, -100%);
   }
-  
+
   &[placement="left"] { 
     --drawer-height: 100%;
-    --drawer-left:0;
-    --drawer-top:0;
-    --drawer-boxshadow: 0px 0px 3px 0px #000;
-    border-right: 1px solid #dadada;  
+   --drawer-left: 0;
+    --drawer-top: 0;
+    --drawer-transform: translate(-100%, 0); 
   }
-  
+
   &[placement="bottom"] { 
     --drawer-bottom: 0;
-    --drawer-left:0;
+    --drawer-left: 0;
     --drawer-width: 100%;
-    --drawer-boxshadow: 0px 0px 3px 0px #000;
-    border-top: 1px solid #dadada; 
+   --drawer-transform: translate(0, 100%);
   }
 
   &[placement="right"] { 
     --drawer-top: 0;
     --drawer-right: 0;
     --drawer-height: 100%;
-    --drawer-boxshadow: 0px 0px 3px 0px #000;
-    border-left: 1px solid #dadada;  
+    --drawer-transform: translate(100%, 0);
   }
-  
+
   &[open] {
     --drawer-open: block; 
+  }
+  
+  &[motion="in"] { 
+    --drawer-animation: slide-in 255ms forwards;
+  }
+
+  &[motion="out"] { 
+    --drawer-animation: slide-out 200ms forwards;
   }
 
  &[overlay] {
    .drawer-overlay {
-      z-index:1; 
+      z-index: 1; 
       left: 0; 
       top: 0; 
       width: 100%;
       height: 100%;
       position: fixed;
-      background-color: rgba(0, 0, 0, 0.233);
+      background-color: rgba(0, 0, 0, 0.075);
     }
   }
 
  .drawer {
-    z-index:2; 
+    z-index: 2; 
     position: var(--drawer-position, fixed);
     height: var(--drawer-height, auto);
     width: var(--drawer-width, auto);
     top: var(--drawer-top);
     left: var(--drawer-left);
     right: var(--drawer-right);
-    bottom: var(--drawer-bottom);
-    background-color: var(--drawer-background-color, #fff);
+    bottom: var(--drawer-bottom);  
+    background-color: var(--drawer-background-color, rgb(167, 6, 6));
     box-shadow: var(--drawer-boxshadow);
-    overflow-y: auto;
+    transform: var(--drawer-transform);
+    animation: var(--drawer-animation)
  }
-  display: var(--drawer-open, none);
+  //  display:  var(--drawer-open);
+
+ // visibility: var(--drawer-open, hidden)  !important;
+
+  @keyframes slide-in {
+    100% { 
+      opacity: 1;
+      transform: translate(0, 0); 
+    }
+  }
+  @keyframes slide-out {
+    0% { 
+      //opacity: 0;
+      transform: translate(0, 0); 
+      --drawer-open: none;
+    }
+  } 
 }

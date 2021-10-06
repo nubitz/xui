@@ -1,5 +1,6 @@
 x-box { 
-  display:flex;
+  display: flex;
+  padding: 10px;
   width: var(--box-width);
   align-items: var(--box-align-items);
   justify-content: var(--box-justify-content);

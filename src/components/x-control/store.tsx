@@ -6,11 +6,16 @@ const { state, onChange } = createStore({
         action: null,
         trigger: null,
         target: null
-    }
+    },
+    registerEvents: {}
 });
 
-onChange('control', (name) => {
-    console.log(name, state)
+onChange('control', ({ name }) => {
+    const { registerEvents: events } = state;
+    const e = events[name];
+    if (e && e?.callback instanceof Function) {
+        e.callback();
+    }
 })
 
 export {
