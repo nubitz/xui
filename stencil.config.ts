@@ -10,9 +10,6 @@ export const config: Config = {
       esmLoaderPath: '../loader',
     },
     {
-      type: 'dist-custom-elements-bundle',
-    },
-    {
       type: 'docs-readme',
     },
     {
@@ -20,7 +17,9 @@ export const config: Config = {
       serviceWorker: null, // disable service workers
     },
   ],
-    plugins: [
-          sass()
-  ]
+  plugins: [
+    sass({
+      injectGlobalPaths: ['src/globals/variables.css'],
+    }),
+  ],
 };

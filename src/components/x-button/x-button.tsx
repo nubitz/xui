@@ -27,7 +27,7 @@ export class XButton {
 
   @Prop() color: Colors = 'secondary';
 
-  @Prop() variant: 'solid' | 'outlined' | 'none' = 'solid';
+  @Prop() variant: 'solid' | 'outline' | 'none' = 'solid';
 
   @Prop({
     reflect: true

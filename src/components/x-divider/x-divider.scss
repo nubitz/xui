@@ -1,3 +1,28 @@
-:host {
+x-divider {
   display: block;
+  &[horizontal] {
+  }
+
+  &[placement='left'] {
+    left: 0;
+  }
+
+  &[placement='top'] {
+    left: 0;
+    top: 0;
+  }
+
+  &[placement='bottom'] {
+    left: 0;
+    bottom: 0;
+  }
+
+  &[placement='right'] {
+    right: 0;
+  }
+
+  width: 100%;
+  height: 1px;
+  position: var(--divider-position, absolute);
+  border-bottom: 1px solid var(--border-divider-color);
 }

@@ -1,0 +1,25 @@
+x-input-styles {
+  display: flex;
+  flex-direction: column;
+  .input-wrapper {
+      display: flex;
+      position: relative;
+      align-items: center;
+  }
+  input { 
+    color: #222;
+    height: 25px;
+    padding: 5px;
+    border: 1px solid #222;
+  }
+   &[error] { 
+     color: red;
+     .input-mask { 
+       color: #222;
+     }
+     input { 
+       border: 2px solid red;
+       background-color: rgba(255, 0, 0, 0.425);
+     }
+   }
+}

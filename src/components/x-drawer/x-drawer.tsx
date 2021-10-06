@@ -1,7 +1,7 @@
-import { Component, Element, Prop, Host, h } from '@stencil/core';
+import { Component, Element, Prop, Host, h, Watch } from '@stencil/core';
 import { Placement } from '../../interface';
 import { setCssProperties } from "../../utils";
-import { onChange } from '../x-control/store'
+import { state } from '../x-control/store'
 
 @Component({
   tag: 'x-drawer',
@@ -28,8 +28,20 @@ export class XDrawer {
   }) overlay: boolean;
 
   @Prop({
-    reflect: true
+    reflect: true,
+    mutable: true
   }) open: boolean;
+
+  @Prop({
+    reflect: true,
+    mutable: true
+  }) motion: 'in' | 'out';
+
+  @Watch('open')
+  openHandler() {
+    this.motion = (this.open)
+      ? 'in' : 'out';
+  }
 
   constructor() {
     setCssProperties(this.host, {
@@ -40,11 +52,14 @@ export class XDrawer {
   }
 
   componentWillLoad() {
-    onChange('control', ({ name }) => {
-      if (name == this.namespace) {
-        this.open = !this.open;
+    state.registerEvents = {
+      ...state.registerEvents,
+      [this.namespace]: {
+        callback: () => {
+          this.open = !this.open;
+        }
       }
-    })
+    }
   }
 
   render() {
