@@ -18,6 +18,10 @@ export class XMedia {
     reflect: true
   }) variant: 'video' | 'img';
 
+  @Prop({
+    reflect: true
+  }) overlay: boolean;
+
   @Prop() clipPath: string;
 
   @Prop() mediaIndex: number;
@@ -33,6 +37,7 @@ export class XMedia {
     return (
       <Host>
         <img src={this.src} />
+        <span class="image-overlay"></span>
         <slot />
       </Host>
     );

@@ -90,6 +90,7 @@ export class XDialog {
                   <slot name='dialog-header' />
                   {!this.disableHeaderControl && (
                     <x-button
+                      class="x-dialog--close"
                       variant="none"
                       onClick={debounce(() => this.closeDialog())}
                     >

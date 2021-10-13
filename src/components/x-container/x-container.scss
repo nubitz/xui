@@ -1,15 +1,13 @@
-
-x-container { 
+x-container {
   display: flex;
   position: relative;
   justify-content: center;
   width: 100%;
   .inner-wrapper {
-     width: var(--container-width, 80%);
-     height: var(--container-height, auto);
-     background-color: var(--container-background-color);
-     padding-top: 20px;
-     padding-bottom: 20px;
-     position: relative;
+    display: block;
+    position: relative;
+    width: var(--container-width, 80%);
+    height: var(--container-height, auto);
+    background-color: var(--container-background-color);
   }
 }

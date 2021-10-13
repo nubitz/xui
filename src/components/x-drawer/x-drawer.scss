@@ -1,52 +1,65 @@
 x-drawer {
-
-  //--drawer-boxshadow: 0px 0px 3px 0px #000;
-
-  &[placement="top"] { 
+  &[placement='top'] {
     --drawer-width: 100%;
     --drawer-left: 0;
     --drawer-top: 0;
-    --drawer-transform: translate(0, -100%);
+    .drawer {
+      width: 100%;
+      height: var(--drawer-minheight, 0px);
+    }
   }
 
-  &[placement="left"] { 
+  &[placement='left'] {
     --drawer-height: 100%;
-   --drawer-left: 0;
+    --drawer-left: 0;
     --drawer-top: 0;
-    --drawer-transform: translate(-100%, 0); 
+    .drawer {
+      width: var(--drawer-minwidth, 0px);
+      height: 100%;
+    }
   }
 
-  &[placement="bottom"] { 
+  &[placement='bottom'] {
     --drawer-bottom: 0;
     --drawer-left: 0;
     --drawer-width: 100%;
-   --drawer-transform: translate(0, 100%);
+    .drawer {
+      width: 100%;
+      height: var(--drawer-minheight, 0px);
+    }
   }
 
-  &[placement="right"] { 
+  &[placement='right'] {
     --drawer-top: 0;
     --drawer-right: 0;
     --drawer-height: 100%;
-    --drawer-transform: translate(100%, 0);
+    .drawer {
+      width: var(--drawer-minwidth, 0px);
+      height: 100%;
+    }
   }
 
   &[open] {
-    --drawer-open: block; 
+    .drawer-overlay {
+      display: block;
+    }
+    --drawer-open: block;
   }
-  
-  &[motion="in"] { 
+
+  &[motion='in'] {
     --drawer-animation: slide-in 255ms forwards;
   }
 
-  &[motion="out"] { 
-    --drawer-animation: slide-out 200ms forwards;
+  &[motion='out'] {
+    --drawer-animation: slide-out 255ms forwards;
   }
 
- &[overlay] {
-   .drawer-overlay {
-      z-index: 1; 
-      left: 0; 
-      top: 0; 
+  &[overlay] {
+    .drawer-overlay {
+      display: var(--drawer-open, none);
+      z-index: 1;
+      left: 0;
+      top: 0;
       width: 100%;
       height: 100%;
       position: fixed;
@@ -54,35 +67,29 @@ x-drawer {
     }
   }
 
- .drawer {
-    z-index: 2; 
-    position: var(--drawer-position, fixed);
-    height: var(--drawer-height, auto);
-    width: var(--drawer-width, auto);
+  .drawer {
+    z-index: 2;
+    position: absolute;
+    overflow: hidden;
     top: var(--drawer-top);
     left: var(--drawer-left);
     right: var(--drawer-right);
-    bottom: var(--drawer-bottom);  
-    background-color: var(--drawer-background-color, rgb(167, 6, 6));
-    box-shadow: var(--drawer-boxshadow);
-    transform: var(--drawer-transform);
-    animation: var(--drawer-animation)
- }
-  //  display:  var(--drawer-open);
-
- // visibility: var(--drawer-open, hidden)  !important;
+    bottom: var(--drawer-bottom);
+    background-color: var(--drawer-background-color, var(--color-primary-base));
+    animation: var(--drawer-animation);
+  }
 
   @keyframes slide-in {
-    100% { 
-      opacity: 1;
-      transform: translate(0, 0); 
+    100% {
+      width: var(--drawer-width, auto);
+      height: var(--drawer-height, auto);
+      overflow: unset;
     }
   }
   @keyframes slide-out {
-    0% { 
-      //opacity: 0;
-      transform: translate(0, 0); 
-      --drawer-open: none;
+    0% {
+      width: var(--drawer-width, auto);
+      height: var(--drawer-height, auto);
     }
-  } 
+  }
 }

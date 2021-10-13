@@ -13,6 +13,8 @@ export class XDrawer {
 
   @Prop() width: string;
 
+  @Prop() minWidth: string;
+
   @Prop() height: string;
 
   @Prop() namespace: string;
@@ -20,7 +22,7 @@ export class XDrawer {
   @Prop() position: 'fixed' | 'absolute' | 'relative' | 'sticky';
 
   @Prop({
-    reflect: true
+    reflect: true,
   }) placement: Placement = "left";
 
   @Prop({
@@ -47,7 +49,8 @@ export class XDrawer {
     setCssProperties(this.host, {
       '--drawer-width': this.width,
       '--drawer-height': this.height,
-      '--drawer-position': this.position
+      '--drawer-position': this.position,
+      '--drawer-minwidth': this.minWidth
     });
   }
 
@@ -63,6 +66,7 @@ export class XDrawer {
   }
 
   render() {
+    console.log(this.placement)
     return (
       <Host>
         <div

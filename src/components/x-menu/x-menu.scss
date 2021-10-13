@@ -1,11 +1,87 @@
 x-menu {
-  display: flex;
-  justify-content: center;
-  align-items: stretch;
-  flex-direction: column;
-  width: 350px;
-  border: 1px solid #dadada;
-  div { 
-    background-color: khaki;
+  display: inline-block;
+  position: relative;
+  width: fit-content;
+
+  &[placement='top'] {
+    --menu-origin-top: -5px;
+    --menu-origin-left: 50%;
+    --menu-trans-x: -50%;
+    --menu-trans-y: -100%;
+  }
+  &[placement='left'] {
+    --menu-origin-top: 50%;
+    --menu-origin-left: -5px;
+    --menu-trans-x: -100%;
+    --menu-trans-y: -50%;
+  }
+  &[placement='bottom'] {
+    --menu-origin-top: 100%;
+    --menu-origin-left: 50%;
+    --menu-trans-x: -50%;
+    --menu-trans-y: 5px;
+  }
+  &[placement='right'] {
+    --menu-origin-top: 50%;
+    --menu-origin-left: 100%;
+    --menu-trans-x: 5px;
+    --menu-trans-y: -50%;
+  }
+  &[placement='bottom-right'] {
+    --menu-origin-top: 100%;
+    --menu-origin-left: 100%;
+    --menu-trans-x: -100%;
+    --menu-trans-y: 5px;
+  }
+  &[placement='bottom-left'] {
+    --menu-origin-top: 100%;
+    --menu-origin-left: 0;
+    --menu-trans-x: 0;
+    --menu-trans-y: 5px;
+  }
+  &[placement='left-top'] {
+    --menu-origin-top: 0%;
+    --menu-origin-left: -5px;
+    --menu-trans-x: -100%;
+    --menu-trans-y: 0%;
+  }
+  &[placement='right-top'] {
+    --menu-origin-top: 0;
+    --menu-origin-left: 100%;
+    --menu-trans-x: 5px;
+    --menu-trans-y: 0;
+  }
+  .origin {
+    display: block;
+    z-index: 9;
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    left: var(--menu-origin-left, 0);
+    top: var(--menu-origin-top, 0);
+    background-color: transparent;
+  }
+  &[open] {
+    [role='menu'] {
+      display: flex;
+    }
+  }
+  &:not([open]) [role='menu'] {
+    display: none;
+  }
+  [role='menu'] {
+    z-index: 9;
+    position: absolute;
+    flex-direction: column;
+    width: var(--menu-width, auto);
+    height: var(--menu-height, auto);
+    left: var(--menu-origin-left, 0);
+    top: var(--menu-origin-top, 0);
+    background-color: var(--background);
+    transform-origin: initial;
+    transform: translate(var(--menu-trans-x, 0), var(--menu-trans-y, 0));
+    > :hover {
+      background-color: violet;
+    }
   }
 }

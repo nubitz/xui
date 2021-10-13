@@ -29,7 +29,6 @@ export class XTooltip {
 
   @Listen('mouseover')
   mouseoverHandler(): void {
-    this.setPosition();
     this.open = true;
   }
 
@@ -41,7 +40,6 @@ export class XTooltip {
 
   @Listen('focus')
   focusHandler(): void {
-    this.setPosition();
     this.open = true;
   }
 
@@ -50,22 +48,11 @@ export class XTooltip {
     this.open = false;
   }
 
-  setPosition() {
-
-    const { top, left } = this.origin.getBoundingClientRect()
-
-    setCssProperties(this.host, {
-      '--tooltip-top': top + 'px',
-      '--tooltip-left': left + 'px'
-    })
-  }
-
   componentDidLoad() {
     setCssProperties(this.host, {
       '--tooltip-width': this.width,
       '--tooltip-height': this.height
     });
-    this.setPosition();
   }
 
   render() {

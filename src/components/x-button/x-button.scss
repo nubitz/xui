@@ -2,61 +2,52 @@ x-button {
   --button-base-color: #eee;
   --button-font-color: #000;
 
-  &[variant='primary'] { 
+  &[variant='primary'] {
     --button-base-color: blue;
-  } 
-  
-  &[color='secondary'] { 
+  }
+  &[color='secondary'] {
     --button-base-color: blue;
-  } 
-  
-  &[color='tertiary'] { 
+  }
+  &[color='tertiary'] {
     --button-base-color: pink;
   }
-
-  &[color='success'] {  
+  &[color='success'] {
     --button-base-color: var(--color-light-success);
   }
-
-  &[color='info'] {  
-      --button-base-color: var(--color-light-info);
-  } 
-  
-  &[color='warning'] {  
+  &[color='info'] {
+    --button-base-color: var(--color-light-info);
+  }
+  &[color='warning'] {
     --button-base-color: var(--color-light-warning);
   }
-
-  &[color='error'] { 
+  &[color='error'] {
     --button-base-color: var(--color-light-danger);
-  } 
+  }
 
   &[variant='solid'] {
     --button-font-color: #fff;
-    --button-background-color: var(--button-base-color);;
+    --button-background-color: var(--button-base-color);
+    --button-border: 1px solid var(--button-base-color);
   }
-
-  &[variant='outline'] {  
+  &[variant='outline'] {
     --button-border: 1px solid var(--button-base-color);
     --button-font-color: var(--button-base-color);
     --button-background-color: transparent;
   }
-  
-  &[variant='none'] {  
+  &[variant='none'] {
     --button-border: none;
     --button-background-color: transparent;
     --button-font-color: var(--button-base-color);
   }
 
-  &[elevated] { 
+  &[elevated] {
     --button-box-shadow: 0px 0px 4px 0px rgb(0 0 0/ 30%);
   }
-
   &[rounded] {
     --button-radius: 50%;
   }
-
   &[disabled] {
-   --button-cursor: no-drop;
+    --button-cursor: no-drop;
   }
 
   button {
@@ -65,13 +56,13 @@ x-button {
     width: var(--button-width, auto);
     height: var(--button-height, auto);
     padding: var(--button-padding, 12px);
-    border-radius: var(--button-radius, 5px);
+    border-radius: var(--button-radius);
     box-shadow: var(--button-box-shadow, none);
     background-color: var(--button-background-color, none);
-    border: var(--button-border, 1px solid --button-background-color);
-    &:hover { 
-     // color: #fff;
-    //  background-color: blue; // Need to define
+    border: var(--button-border);
+    &:hover {
+      // color: #fff;
+      //  background-color: blue; // Need to define
     }
   }
 }

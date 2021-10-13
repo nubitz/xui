@@ -16,57 +16,51 @@ export default {
                 type: 'text',
             }
         },
+        overlay: {
+            control: {
+                type: 'boolean',
+            }
+        },
         placement: {
             control: {
                 type: 'select',
                 options: ['top', 'left', 'bottom', 'right']
             }
         },
-        positioned: {
-            control: {
-                type: 'select',
-                options: ['fixed', 'absolute', 'relative', 'sticky']
-            }
-        }
     },
 };
 const Template = (props) => (
-    <span>
-        <x-drawer namespace="x-drawer-1" placement="top" height="500px" {...props}  >
-            <x-typography variant="title" text="TOP" />
+    <div>
+        <x-drawer
+            namespace="x-drawer-1"
+            {...props}
+        >
+            <x-typography
+                variant="title"
+                text="TOP"
+            />
         </x-drawer>
-        <x-drawer namespace="x-drawer-2" placement="left" width="300px" >
-            <x-typography variant="title" text="LEFT" />
-        </x-drawer>
-        <x-drawer namespace="x-drawer-3" placement="right" width="300px">
-            <x-typography variant="title" text="RIGHT" />
-        </x-drawer>
-        <x-drawer namespace="x-drawer-4" placement="bottom" height="500px">
-            <x-typography variant="title" text="BOTTOM" />
-        </x-drawer>
-        <x-container>
-            <x-control name="x-drawer-1" trigger="click,mouseneter">
-                <x-button color="warning" variant="solid">
-                    Open/Close Drawer 1
-                </x-button>
-            </x-control>
-            <x-control name="x-drawer-2" trigger="click">
-                <x-button color="info" variant="outline">
-                    Open/Close Drawer 2
-                </x-button>
-            </x-control>
-            <x-control name="x-drawer-3" trigger="click">
-                <x-button color="error" variant="solid">
-                    Open/Close Drawer 3
-                </x-button>
-            </x-control>
-            <x-control name="x-drawer-4" trigger="click">
-                <x-button color="info" variant="solid">
-                    Open/Close Drawer 4
-                </x-button>
-            </x-control>
+        <x-container
+            height="100%"
+            width="500px"
+        >
+            <x-box
+                alignItems="end"
+                width="100%"
+                justify-content="end"
+            >
+                <x-control
+                    name="x-drawer-1"
+                    trigger="click,mouseneter">
+                    <x-button
+                        color="warning"
+                        variant="solid">
+                        Open/Close Drawer 1
+                    </x-button>
+                </x-control>
+            </x-box>
         </x-container>
-    </span>
+    </div>
 );
 
 export const Drawer = Template.bind({})
