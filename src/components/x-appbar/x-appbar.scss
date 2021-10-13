@@ -1,13 +1,14 @@
 x-appbar {
+  position: absolute;
   display: flex;
-  flex-direction: row;  
-  justify-content: space-evenly;
-  border-top: 1px solid #dadada;
-  border-bottom: 1px solid #dadada;
-  height: 100px;
-  gap: 5px;
-  div { 
-    border-left: 1px solid #dadada;
-    border-right: 1px solid #dadada;
+  flex-direction: row;
+  left: 0;
+  width: 100%;
+  height: var(--appbar-height, auto);
+  &[placement='top'] {
+    bottom: 0;
+  }
+  &[placement='bottom'] {
+    bottom: 0;
   }
 }

@@ -39,6 +39,14 @@ const Template = (props) => (
     <x-popover {...props}>
         <div>
             HERE IS SOME CONTENT
+            <x-tooltip width="200px" height="50px">
+
+                <div>Tooltip Content</div>
+                <x-button slot="tooltip-control" elevated border="none">
+
+                    Button
+                </x-button>
+            </x-tooltip>
         </div>
         <x-button
             slot="popover-control"

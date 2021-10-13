@@ -107,13 +107,6 @@ export class XTextbox {
           >
             <slot />
           </Input>
-          <InputMask
-            value={this.value}
-            focus={this.focus}
-            mask={this.mask}
-            format={this.format}
-            input={this.nativeInput}
-          />
           <InputOverlay
             host={this.host}
             align={this.overlayAlignment}
@@ -123,6 +116,13 @@ export class XTextbox {
           >
             <slot name="input-overlay" />
           </InputOverlay>
+          <InputMask
+            value={this.value}
+            focus={this.focus}
+            mask={this.mask}
+            format={this.format}
+            input={this.nativeInput}
+          />
         </InputPattern>
       </Host>
     );

@@ -18,11 +18,14 @@ export const Typography: FunctionalComponent<{
         body2: 'span',
         button: 'span',
         caption: 'span',
+        link: 'a'
     };
     const Tag = variantMap[variant];
-    return (
-        <Tag {...props}>
-            {children}
-        </Tag>
-    )
+    if (Tag) {
+        return (
+            <Tag {...props}>
+                {children}
+            </Tag>
+        )
+    }
 };

@@ -1,6 +1,6 @@
 /**
  * Do not edit directly
- * Generated on Thu, 30 Sep 2021 02:11:26 GMT
+ * Generated on Mon, 11 Oct 2021 23:01:38 GMT
  */
 
 :root {
@@ -12,34 +12,26 @@
   --color-font-base: hsl(0, 100%, 50%);
   --color-font-secondary: hsl(120, 100%, 50%);
   --color-font-tertiary: hsl(0, 0%, 80%);
-  --color-light-primary: hsl(0, 0%, 0%);
-  --color-light-secondary: hsl(0, 0%, 0%);
-  --color-light-tertiary: hsl(0, 0%, 0%);
-  --color-light-success: hsl(122, 39%, 49%);
-  --color-light-danger: hsl(4, 90%, 58%);
-  --color-light-info: hsl(207, 90%, 54%);
-  --color-light-warning: hsl(45, 100%, 51%);
-  --color-light-hover-primary: hsl(0, 0%, 0%);
-  --color-light-hover-secondary: hsl(0, 0%, 0%);
-  --color-light-hover-tertiary: hsl(0, 0%, 0%);
-  --color-light-hover-success: hsl(0, 0%, 0%);
-  --color-light-hover-danger: hsl(0, 0%, 0%);
-  --color-light-hover-info: hsl(0, 0%, 0%);
-  --color-light-hover-warning: hsl(0, 0%, 0%);
-  --color-light-focus-primary: hsl(0, 0%, 0%);
-  --color-light-focus-secondary: hsl(0, 0%, 0%);
-  --color-light-focus-tertiary: hsl(0, 0%, 0%);
-  --color-light-focus-success: hsl(0, 0%, 0%);
-  --color-light-focus-danger: hsl(0, 0%, 0%);
-  --color-light-focus-info: hsl(0, 0%, 0%);
-  --color-light-focus-warning: hsl(0, 0%, 0%);
-  --typography-family: ;
-  --typography-size-base: 1rem;
-  --typography-size-small: 0.75rem;
-  --typography-size-medium: 1rem;
-  --typography-size-large: 2rem;
+  --color-primary-base: hsl(220, 19%, 45%);
+  --color-primary-accent: hsl(0, 0%, 0%);
+  --color-secondary-base: hsl(186, 79%, 56%);
+  --color-secondary-accent: hsl(0, 0%, 0%);
+  --color-teritary-base: hsl(28, 99%, 71%);
+  --color-teritary-accent: hsl(0, 0%, 0%);
+  --color-quaternary-base: hsl(28, 99%, 71%);
+  --color-quaternary-accent: hsl(0, 0%, 0%);
+  --color-info-base: hsl(0, 0%, 0%);
+  --color-info-accent: hsl(0, 0%, 0%);
+  --color-success-base: hsl(0, 0%, 0%);
+  --color-success-accent: hsl(0, 0%, 0%);
+  --color-warning-base: hsl(0, 0%, 0%);
+  --color-warning-accent: hsl(0, 0%, 0%);
+  --color-danger-base: hsl(0, 0%, 0%);
+  --color-danger-accent: hsl(0, 0%, 0%);
   --size-font-small: 0.75rem; /* the small size of the font */
   --size-font-medium: 1rem; /* the medium size of the font */
   --size-font-large: 2rem; /* the large size of the font */
   --size-font-base: 1rem; /* the base size of the font */
+  --color-light-info: green;
+  --color-light-warning: red;
 }

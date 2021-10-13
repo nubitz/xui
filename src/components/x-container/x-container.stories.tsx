@@ -31,5 +31,4 @@ export const Container = Template.bind({});
 Container.args = {
     width: '80%',
     height: '500px',
-    background: "yellow",
 }

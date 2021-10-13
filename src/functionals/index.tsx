@@ -7,6 +7,7 @@ import { InputError } from './InputError';
 import { InputHelperText } from './InputHelperText';
 import { InputPattern } from './InputPattern';
 import { Typography } from './Typography';
+import { Calendar } from './Calendar'
 
 export {
     Button,
@@ -17,5 +18,6 @@ export {
     InputOverlay,
     InputHelperText,
     InputPattern,
-    Typography
+    Typography,
+    Calendar
 }

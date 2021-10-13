@@ -1,0 +1,36 @@
+{
+  "color": {
+    "primary": {
+      "base": { "value": "#5D6C89" },
+      "accent": { "value": "" }
+    },
+    "secondary": {
+      "base": { "value": "#36D6E7" },
+      "accent": { "value": "" }
+    },
+    "teritary": {
+      "base": { "value": "#FEB06A" },
+      "accent": { "value": "" }
+    },
+    "quaternary": {
+      "base": { "value": "#FEB06A" },
+      "accent": { "value": "" }
+    },
+    "info": {
+      "base": { "value": "" },
+      "accent": { "value": "" }
+    },
+    "success": {
+      "base": { "value": "" },
+      "accent": { "value": "" }
+    },
+    "warning": {
+      "base": { "value": "" },
+      "accent": { "value": "" }
+    },
+    "danger": {
+      "base": { "value": "" },
+      "accent": { "value": "" }
+    }
+  }
+}

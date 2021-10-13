@@ -1,6 +1,6 @@
-import { Component, Element, Listen, Prop, Host, h } from '@stencil/core';
+import { Component, Element, Prop, Host, h } from '@stencil/core';
 import { Placement } from '../../interface';
-import { setCssProperties } from '../../utils';
+import { debounce, setCssProperties } from '../../utils';
 
 @Component({
   tag: 'x-popover',
@@ -28,9 +28,10 @@ export class XPopover {
   }) placement: Placement = 'top';
 
   openHandler() {
+    // this.setPosition();
     this.open = !this.open;
   }
-
+  /*
   @Listen('resize', { target: 'window' })
   resizeHandler() {
     this.open && this.setPosition();
@@ -50,6 +51,7 @@ export class XPopover {
       '--popover-left': left + 'px'
     })
   }
+    */
 
   componentDidLoad() {
 
@@ -57,7 +59,7 @@ export class XPopover {
       '--popover-width': this.width,
       '--popover-height': this.height
     });
-    this.setPosition();
+    /// this.setPosition();
   }
 
   render() {
@@ -65,6 +67,13 @@ export class XPopover {
       <Host>
         <span class="origin" ref={el => this.origin = el} />
         <div role="popover" ref={el => this.popover = el} >
+          <x-button
+            class="x-popover--close"
+            variant="none"
+            onClick={debounce(() => this.openHandler())}
+          >
+            <x-icon name="times" solid />
+          </x-button>
           <slot />
         </div>
         <span
