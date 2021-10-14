@@ -6,12 +6,27 @@ export default {
     parameters: {
     },
     argTypes: {
+        open: {
+            control: {
+                type: 'boolean',
+            }
+        },
         width: {
             control: {
                 type: 'text',
             }
         },
+        minWidth: {
+            control: {
+                type: 'text',
+            }
+        },
         height: {
+            control: {
+                type: 'text',
+            }
+        },
+        minHeight: {
             control: {
                 type: 'text',
             }
@@ -37,7 +52,7 @@ const Template = (props) => (
         >
             <x-typography
                 variant="title"
-                text="TOP"
+                text="[ Content ]"
             />
         </x-drawer>
         <x-container

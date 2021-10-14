@@ -11,6 +11,21 @@ export default {
         }
     },
     argTypes: {
+        value: {
+            control: {
+                type: 'text'
+            }
+        },
+        name: {
+            control: {
+                type: 'text'
+            }
+        },
+        allyLabel: {
+            control: {
+                type: 'text'
+            }
+        },
         width: {
             control: {
                 type: 'text'
@@ -20,6 +35,10 @@ export default {
             control: {
                 type: 'text'
             }
+        },
+        type: {
+            control: 'select',
+            options: ['submit', 'button']
         },
         variant: {
             control: 'select',
@@ -36,7 +55,12 @@ export default {
                 'info',
                 'warning'
             ]
-        }
+        },
+        border: {
+            control: {
+                type: 'text'
+            }
+        },
     },
 };
 

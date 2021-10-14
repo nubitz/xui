@@ -1,12 +1,15 @@
 x-appbar {
   position: absolute;
+  &[sticky] {
+    position: sticky;
+  }
   display: flex;
   flex-direction: row;
   left: 0;
   width: 100%;
   height: var(--appbar-height, auto);
   &[placement='top'] {
-    bottom: 0;
+    top: 0;
   }
   &[placement='bottom'] {
     bottom: 0;

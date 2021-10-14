@@ -1,0 +1,4 @@
+x-menu-item :host {
+  display: block;
+  background-color: red;
+}

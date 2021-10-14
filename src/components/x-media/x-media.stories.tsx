@@ -11,6 +11,37 @@ export default {
         }
     },
     argTypes: {
+        src: {
+            control: {
+                type: 'text'
+            }
+        },
+        variant: {
+            control: {
+                type: 'select',
+                options: ['img', 'video']
+            }
+        },
+        center: {
+            control: {
+                type: 'boolean'
+            }
+        },
+        overlay: {
+            control: {
+                type: 'boolean'
+            }
+        },
+        clipPath: {
+            control: {
+                type: 'text'
+            }
+        },
+        mediaIndex: {
+            control: {
+                type: 'number'
+            }
+        },
     },
 };
 
