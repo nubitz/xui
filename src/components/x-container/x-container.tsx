@@ -28,9 +28,9 @@ export class XContainer {
     return (
       <Host>
         <slot name="container-background" />
-        <div class="inner-wrapper">
+        <section class="inner-wrapper">
           <slot></slot>
-        </div>
+        </section>
       </Host>
     );
   }

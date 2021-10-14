@@ -1,4 +1,4 @@
-import { Component, Element, Prop, Host, h, Watch } from '@stencil/core';
+import { Component, Element, Prop, State, Host, h, Watch } from '@stencil/core';
 import { Placement } from '../../interface';
 import { setCssProperties } from "../../utils";
 import { state } from '../x-control/store'
@@ -17,6 +17,8 @@ export class XDrawer {
 
   @Prop() height: string;
 
+  @Prop() minHeight: string;
+
   @Prop() namespace: string;
 
   @Prop() position: 'fixed' | 'absolute' | 'relative' | 'sticky';
@@ -34,10 +36,7 @@ export class XDrawer {
     mutable: true
   }) open: boolean;
 
-  @Prop({
-    reflect: true,
-    mutable: true
-  }) motion: 'in' | 'out';
+  @State() motion: 'in' | 'out';
 
   @Watch('open')
   openHandler() {
@@ -50,7 +49,8 @@ export class XDrawer {
       '--drawer-width': this.width,
       '--drawer-height': this.height,
       '--drawer-position': this.position,
-      '--drawer-minwidth': this.minWidth
+      '--drawer-minwidth': this.minWidth,
+      '--drawer-minheight': this.minHeight
     });
   }
 
@@ -66,9 +66,10 @@ export class XDrawer {
   }
 
   render() {
-    console.log(this.placement)
     return (
-      <Host>
+      <Host
+        motion={this.motion}
+      >
         <div
           aria-hidden="true"
           class="drawer-overlay"

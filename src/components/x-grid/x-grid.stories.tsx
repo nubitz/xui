@@ -7,16 +7,29 @@ export default {
     parameters: {
     },
     argTypes: {
-        label: {
-            description: 'overwritten description',
-            table: {
-                type: {
-                    summary: 'something short',
-                    detail: 'something really really long'
-                },
-            },
+        columns: {
             control: {
-                type: null,
+                type: 'text',
+            },
+        },
+        justifyContent: {
+            control: {
+                type: 'text',
+            },
+        },
+        justifyItems: {
+            control: {
+                type: 'text',
+            },
+        },
+        alignedContent: {
+            control: {
+                type: 'text',
+            },
+        },
+        alignedItem: {
+            control: {
+                type: 'text',
             },
         },
     },

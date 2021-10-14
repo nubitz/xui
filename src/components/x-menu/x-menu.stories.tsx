@@ -21,6 +21,32 @@ export default {
                 type: 'text'
             }
         },
+        height: {
+            control: {
+                type: 'text'
+            }
+        },
+        placement: {
+            control: {
+                type: 'select',
+                options: [
+                    'top',
+                    'left',
+                    'bottom',
+                    'right',
+                    'bottom-right',
+                    'bottom-left',
+                    'left-top',
+                    'right-top'
+                ]
+            }
+        },
+        activation: {
+            control: {
+                type: 'select',
+                options: ['click', 'hover']
+            }
+        },
     },
 };
 

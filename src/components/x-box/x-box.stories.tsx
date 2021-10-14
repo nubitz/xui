@@ -13,31 +13,56 @@ export default {
         height: {
             control: 'text'
         },
+        inline: {
+            control: 'boolean'
+        },
         gap: {
             control: 'text'
+        },
+        direction: {
+            control: 'select',
+            options: ['row', 'column']
         },
         alignSelf: {
             control: 'text'
         },
         justifyContent: {
             control: 'select',
-            options: ['space-evently', 'space-between']
+            options: [
+                'space-evently',
+                'space-between',
+                'end'
+            ]
         },
         alignContent: {
             control: 'select',
-            options: ['stretch', 'flex-start', 'flex-end', 'center', 'space-evently', 'space-between']
+            options: [
+                'stretch',
+                'center',
+                'space-evently',
+                'space-between'
+            ]
         },
         alignItems: {
             control: 'select',
-            options: ['start', 'center', 'end', 'stretch', 'baseline']
+            options: [
+                'stretch',
+                'center',
+                'baseline',
+                'start',
+                'end',
+                'self-start',
+                'self-end',
+                'normal'
+            ]
         }
     },
 };
 
 const Template = (props) => (
     <x-box {...props}>
-        <div> I am here</div>
-        <div> I am here</div>
+        <div> [Block Content]</div>
+        <div> [Block Content]</div>
     </x-box>
 );
 

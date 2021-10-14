@@ -21,6 +21,11 @@ export default {
                 type: 'boolean'
             }
         },
+        color: {
+            control: {
+                type: 'boolean'
+            }
+        },
     },
 };
 
