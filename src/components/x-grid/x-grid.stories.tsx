@@ -44,7 +44,7 @@ const Template = (props) => (
                 <h2> WHAT THE FUCK</h2>
                 <x-grid columns="repeat(auto-fill, minmax(350px, 1fr))" >
                     {'12345678'.split('').map(_ => (
-                        <x-card elevated>
+                        <x-card>
                             <x-box slot="card-header">
                                 <x-typography variant="title"> HEADER </x-typography>
                             </x-box>
@@ -67,7 +67,7 @@ const Template = (props) => (
                 </x-grid>
             </div>
             <div>
-                <x-card elevated>
+                <x-card>
                     <x-box slot="card-header">
                         <x-typography variant="title"> HEADER </x-typography>
                     </x-box>

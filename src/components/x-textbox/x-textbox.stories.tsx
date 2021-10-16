@@ -11,6 +11,60 @@ export default {
         }
     },
     argTypes: {
+        label: {
+            control: {
+                type: 'text'
+            }
+        },
+        value: {
+            control: {
+                type: 'text'
+            }
+        },
+        type: {
+            control: {
+                type: 'select',
+                options: [
+                    'type',
+                    'password'
+                ]
+            }
+        },
+        required: {
+            control: {
+                type: 'boolean'
+            }
+        },
+        format: {
+            control: {
+                type: 'text'
+            }
+        },
+        mask: {
+            control: {
+                type: 'text'
+            }
+        },
+        overlayAlignment: {
+            control: {
+                type: 'select',
+                options: [
+                    'left',
+                    'right'
+                ]
+            }
+        },
+        maxLength: {
+            control: {
+                type: 'number'
+            }
+        },
+        description: {
+            control: {
+                type: 'text'
+            }
+        },
+
     },
 };
 
@@ -27,3 +81,4 @@ Textbox.args = {
     format: '***-*-*(*)',
     mask: '___-_-_(_)'
 }
+

@@ -1,42 +1,45 @@
 x-card {
-  &[border] { 
-    --card-border: 1px solid #dadada;
+  &[rounded] {
+    --card-rounded: 15px;
   }
-  &[rounded] { 
-    --card-rounded: 5px;
-  }
-  &[elevated] { 
+
+  &[elevated] {
     --card-box-shadow: 0px 0px 4px 0px rgb(0 0 0/ 30%);
   }
+
+  &[variant='outline'] {
+    --card-border: 1px solid #dadada;
+  }
+
+  &[variant='elevated'] {
+    --card-box-shadow: 0px 0px 4px 0px rgb(0 0 0/ 30%);
+  }
+
   div {
-    &[role="header"] {
-      flex-shrink: 0;
+    &[role='header'] {
       position: relative;
-      border-bottom: 1px solid #dadada;
+      border-radius: var(--card-rounded) var(--card-rounded) 0 0;
     }
-    &[role="body"] { 
-      flex-shrink: 0;
-      flex-grow: 1;
-      position: relative; 
-      min-height: 150px;
-    }
-    &[role="footer"] {
-      flex-shrink: 0;
-      border-top: 1px solid #dadada;
+    &[role='body'] {
+      flex: 1;
       position: relative;
+    }
+    &[role='footer'] {
+      position: relative;
+      border-radius: 0 0 var(--card-rounded) var(--card-rounded);
     }
   }
+
   display: flex;
-  flex-direction: column;
-  z-index: 1;
   position: relative;
-  background-color: var(--card-background, #fff);
+  flex-direction: var(--card-direction, column);
   width: var(--card-width, auto);
   height: var(--card-height, auto);
   border: var(--card-border, none);
-  border-radius: var(--card-rounded, none);
+  border-radius: var(--card-rounded, 0px);
   box-shadow: var(--card-box-shadow, none);
-  &:hover { 
-  //  background-color: var(--card-hover-background-color, none);
+  background-color: var(--card-background, #fff);
+  &:hover {
+    //  box-shadow: 0px 0px 10px 0px rgb(0 0 0/ 30%);
   }
 }

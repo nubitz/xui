@@ -21,6 +21,10 @@ export class XLink {
 
   @Prop({
     reflect: true
+  }) stretch: boolean;
+
+  @Prop({
+    reflect: true
   }) underline: 'none' | 'hover' | 'always' = 'none';
 
   @Event() linkClick: EventEmitter;

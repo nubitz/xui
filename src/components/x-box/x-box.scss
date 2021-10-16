@@ -3,6 +3,7 @@ x-box {
   &[inline] {
     --inline-flex: inline-flex;
   }
+  border-radius: inherit;
   display: var(--inline-flex, flex);
   flex-direction: var(--box-direction, row);
   position: relative;
