@@ -63,7 +63,6 @@ const Template = (props) => (
         </x-drawer>
 
         <x-container
-            background="red"
             height="41px"
         >
             <x-appbar {...props}>
@@ -71,6 +70,7 @@ const Template = (props) => (
                     inline
                     justify-content="space-between"
                     align-items="center"
+
                     width="50%"
                 >
                     <x-link> <x-icon name="envelope" /> link 4 </x-link>
@@ -84,7 +84,7 @@ const Template = (props) => (
                 <x-box
                     inline
                     justify-content="end"
-                    align-items="end"
+                    align-items="center"
                     width="50%"
                     gap="25px"
                 >

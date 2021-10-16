@@ -12,6 +12,10 @@ export class XMedia {
 
   @Prop({
     reflect: true
+  }) altText: string;
+
+  @Prop({
+    reflect: true
   }) center: boolean;
 
   @Prop({
@@ -36,7 +40,7 @@ export class XMedia {
   render() {
     return (
       <Host>
-        <img src={this.src} />
+        <img src={this.src} alt={this.altText} />
         <span class="image-overlay"></span>
         <slot />
       </Host>

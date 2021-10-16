@@ -11,18 +11,53 @@ export default {
         }
     },
     argTypes: {
+        text: {
+            control: {
+                type: 'text'
+            }
+        },
+        weight: {
+            control: {
+                type: 'text'
+            }
+        },
+        size: {
+            control: {
+                type: 'text'
+            }
+        },
+        sx: {
+            control: {
+                type: 'object'
+            }
+        },
         variant: {
             control: {
                 type: 'select',
-                options: ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'title', 'subtitle1', 'subtitle2', 'body1', 'body2', 'caption', "button"]
+                options: [
+                    'h1',
+                    'h2',
+                    'h3',
+                    'h4',
+                    'h5',
+                    'h6',
+                    'title',
+                    'subtitle1',
+                    'subtitle2',
+                    'body1',
+                    'body2',
+                    'caption',
+                    'button',
+                    'link'
+                ]
             }
         }
     },
 };
 
-const Template = () => (
+const Template = (props) => (
     <div>
-        <x-typography variant="h1" text="h1.Heading" />
+        <x-typography {...props} variant="h1" text="h1.Heading" />
         <x-typography variant="h2" text="h2.Heading" />
         <x-typography variant="h3" text="h3.Heading" />
         <x-typography variant="h4" text="h4.Heading" />
@@ -42,3 +77,5 @@ export const Typography = Template.bind({});
 
 Typography.args = {
 }
+
+

@@ -23,7 +23,7 @@ export class XBox {
 
   @Prop() alignSelf: string;
 
-  @Prop() justifyContent: 'space-evently' | 'space-between' | 'end';
+  @Prop() justifyContent: 'space-evently' | 'space-between' | 'end' | 'center' | 'start';
 
   @Prop() alignContent: 'stretch' | 'center' | 'space-evently' | 'space-between';
 

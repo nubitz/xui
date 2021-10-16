@@ -15,11 +15,11 @@ export class XCard {
 
   @Prop({
     reflect: true
-  }) border: boolean;
+  }) variant: 'elevation' | 'outline' | 'none';
 
   @Prop({
     reflect: true
-  }) elevated: boolean;
+  }) direction: 'column' | 'row' | 'row-reverse' | 'column-reverse' = 'column';
 
   @Prop({
     reflect: true
@@ -28,7 +28,8 @@ export class XCard {
   constructor() {
     setCssProperties(this.host, {
       '--card-width': this.width,
-      '--card-height': this.height
+      '--card-height': this.height,
+      '--card-direction': this.direction
     });
   }
 

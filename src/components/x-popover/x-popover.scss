@@ -26,6 +26,12 @@ x-popover {
     --popover-trans-x: 5px;
     --popover-trans-y: -50%;
   }
+  &[variant='outline'] {
+    --popover-outline: 1px solid #dadada;
+  }
+  &[variant='elevation'] {
+    --popover-elevation: 0 0 5px 0 rgb(51 51 51 / 50%);
+  }
   .origin {
     display: block;
     z-index: 9;
@@ -45,13 +51,12 @@ x-popover {
     display: none;
     width: var(--popover-width, auto);
     height: var(--popover-height, auto);
-    // top: var(--popover-top);
-    // left: var(--popover-left);
     left: var(--popover-origin-left, 0);
     top: var(--popover-origin-top, 0);
+    border: var(--popover-outline);
+    box-shadow: var(--popover-elevation);
     transform: translate(var(--popover-trans-x, 0), var(--popover-trans-y, 0));
     background-color: #fff;
-    border: 1px solid #dadada;
     .x-popover--close {
       position: absolute;
       z-index: 99;

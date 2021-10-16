@@ -27,6 +27,10 @@ export class XPopover {
     reflect: true
   }) placement: Placement = 'top';
 
+  @Prop({
+    reflect: true
+  }) variant: 'outline' | 'elevation' | 'none' = 'outline';
+
   openHandler() {
     // this.setPosition();
     this.open = !this.open;
