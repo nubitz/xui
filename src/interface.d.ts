@@ -37,8 +37,11 @@ export type Sizes = 'small' | 'mediumn' | 'large';
 
 export interface InputProps {
   value: string;
-  labe: string;
+  label: string;
+  fieldName: string;
   readonly: boolean;
   required: boolean;
   maxLength: number;
+  description: string;
+  valueChange: any;
 }

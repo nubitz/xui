@@ -8,7 +8,7 @@ export const InputPattern: FunctionalComponent<{
     errors: string[],
     value: string,
     host: HTMLElement,
-    description: string,
+    description?: string,
     [key: string]: any
 }> = ({ id, label, host, errors, description, required, slots, ...props }, children) => (
     <x-input-styles

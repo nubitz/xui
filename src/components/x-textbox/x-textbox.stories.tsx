@@ -16,6 +16,16 @@ export default {
                 type: 'text'
             }
         },
+        fieldId: {
+            control: {
+                type: 'text'
+            }
+        },
+        fieldName: {
+            control: {
+                type: 'text'
+            }
+        },
         value: {
             control: {
                 type: 'text'

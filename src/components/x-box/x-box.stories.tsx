@@ -21,25 +21,32 @@ export default {
         },
         direction: {
             control: 'select',
-            options: ['row', 'column']
-        },
-        alignSelf: {
-            control: 'text'
+            options: [
+                'row',
+                'row-reverse',
+                'column',
+                'column-reverse'
+            ]
         },
         justifyContent: {
             control: 'select',
             options: [
-                'space-evently',
+                'start',
+                'end',
+                'center',
                 'space-between',
-                'end'
+                'space-around',
+                'space-evently'
             ]
         },
         alignContent: {
             control: 'select',
             options: [
-                'stretch',
+                'flex-start',
+                'flex-end',
                 'center',
-                'space-evently',
+                'stretch',
+                'space-around',
                 'space-between'
             ]
         },
@@ -47,13 +54,10 @@ export default {
             control: 'select',
             options: [
                 'stretch',
-                'center',
-                'baseline',
                 'start',
                 'end',
-                'self-start',
-                'self-end',
-                'normal'
+                'center',
+                'baseline'
             ]
         }
     },
@@ -61,18 +65,24 @@ export default {
 
 const Template = (props) => (
     <x-box {...props}>
-        <div> [Block Content]</div>
-        <div> [Block Content]</div>
+        <x-box-item>
+            [Block Content]
+        </x-box-item>
+        <x-box-item>
+            [Block Content]
+        </x-box-item>
+        <x-box-item>
+            [Block Content]
+        </x-box-item>
     </x-box>
 );
 
 export const Box = Template.bind({});
 Box.args = {
-    width: '100px',
-    height: '100px',
+    width: '80%',
+    height: '200px',
     sx: {
         border: '1px solid #dadada',
-        background: 'red',
-        'box-shadow': 'rgb(34 34 34 / 51%) 0px 0px 5px 1px'
+        background: 'red'
     }
 }

@@ -1,4 +1,4 @@
-import { Component, Element, Prop, Host, h } from '@stencil/core';
+import { Component, Element, Watch, Event, EventEmitter, Prop, Host, h } from '@stencil/core';
 import { debounce, setCssProperties } from '../../utils';
 import { state } from '../x-control/store';
 
@@ -37,6 +37,15 @@ export class XDialog {
     reflect: true
   }) actionRequired: boolean;
 
+  @Event() dialogOn: EventEmitter<{ open: boolean }>
+
+  @Watch('open')
+  dialogWatchHandler(open: boolean): void {
+    this.dialogOn.emit({
+      open: open
+    });
+  }
+
   closeHandler() {
     if (!this.actionRequired) {
       this.closeDialog();
@@ -63,8 +72,6 @@ export class XDialog {
     })
   }
 
-
-
   render() {
     return (
       <Host
@@ -85,8 +92,8 @@ export class XDialog {
           {
             [
               {
-                name: 'dialog-header',
-                html: <div class='dialog-header'>
+                query: 'dialog-header',
+                node: <div class='dialog-header'>
                   <slot name='dialog-header' />
                   {!this.disableHeaderControl && (
                     <x-button
@@ -100,30 +107,30 @@ export class XDialog {
                 </div>
               },
               {
-                name: 'dialog-body',
-                html: <div class='dialog-body'>
+                query: 'dialog-body',
+                node: <div class='dialog-body'>
                   <slot name='dialog-body' />
                 </div>
               },
               {
-                name: 'dialog-footer',
-                html: <div class='dialog-footer'>
+                query: 'dialog-footer',
+                node: <div class='dialog-footer'>
                   <slot name='dialog-footer' />
                 </div>
               }
             ].map(
-              ({ name, html }) => {
-                const hasSlot = this.host.querySelector(`[slot=${name}]`);
+              ({ query, node }) => {
+                const hasSlot = this.host.querySelector(`[slot=${query}]`);
                 if (hasSlot) {
                   return (
-                    html
+                    node
                   )
                 }
               })
           }
-          <slot></slot>
+          <slot />
         </div>
-      </Host >
+      </Host>
     );
   }
 }

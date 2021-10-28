@@ -1,0 +1,13 @@
+x-radiolist {
+  &[inline] {
+    --radiolist-direction: row;
+  }
+  .input-wrapper {
+    display: flex;
+    flex-direction: var(--radiolist-direction, column);
+    x-radio {
+      display: flex;
+      align-items: center;
+    }
+  }
+}

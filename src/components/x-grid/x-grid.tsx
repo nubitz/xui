@@ -10,6 +10,8 @@ export class XGrid {
 
   @Element() host: HTMLElement;
 
+  @Prop() inline: boolean;
+
   @Prop() columns: string;
 
   @Prop() justifyContent: GridContent;
