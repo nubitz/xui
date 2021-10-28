@@ -1,5 +1,5 @@
 import { Component, Element, Prop, Host, h } from '@stencil/core';
-import { setCssProperties } from '../../utils';
+import { fromJSON, setCssProperties } from '../../utils';
 
 @Component({
   tag: 'x-box',
@@ -15,26 +15,21 @@ export class XBox {
 
   @Prop() inline: boolean;
 
-  @Prop() direction: 'row' | 'column';
+  @Prop() direction: 'row' | 'row-reverse' | 'column' | 'column-reverse';
 
   @Prop() sx: any = {};
 
   @Prop() gap: string;
 
-  @Prop() alignSelf: string;
+  @Prop() justifyContent: 'start' | 'end' | 'center' | 'space-between' | 'space-around' | 'space-evently';
 
-  @Prop() justifyContent: 'space-evently' | 'space-between' | 'end' | 'center' | 'start';
+  @Prop() alignContent: 'flex-start' | 'flex-end' | 'center' | 'stretch' | 'space-around' | 'space-between';
 
-  @Prop() alignContent: 'stretch' | 'center' | 'space-evently' | 'space-between';
-
-  @Prop() alignItems: 'stretch' | 'center' | 'baseline' | 'start' | 'end' | 'self-start' | 'self-end' | 'normal';
+  @Prop() alignItems: 'stretch' | 'start' | 'end' | 'center' | 'baseline';
 
   componentWillLoad() {
 
-    if (typeof this.sx == "string") {
-
-      this.sx = JSON?.parse(this.sx) || {};
-    }
+    this.sx = fromJSON(this.sx);
 
     setCssProperties(this.host, {
       '--box-align-items': this.alignItems,

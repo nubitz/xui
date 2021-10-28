@@ -1,0 +1,43 @@
+x-switch {
+  --switch-width: 50px;
+  --switch-offset: 5px;
+
+  &[checked] {
+    --switch-on: calc(var(--switch-width) - calc(20px + var(--switch-offset)));
+  }
+
+  input {
+    all: unset;
+  }
+
+  .x-switch-line {
+    height: 30px;
+    width: var(--switch-width);
+    border: 1px solid #dadada;
+    border-radius: 500px;
+  }
+
+  .x-switch {
+    width: 20px;
+    height: 20px;
+    display: block;
+    position: absolute;
+    border: 1px solid #dadada;
+    border-radius: 50%;
+    background-color: #fff;
+    transition: all 250ms ease;
+    transform: translateX(var(--switch-on, var(--switch-offset)));
+  }
+
+  label {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    align-items: center;
+  }
+
+  position: relative;
+  display: inline-block;
+}

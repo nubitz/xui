@@ -1,12 +1,13 @@
 import { Component, Element, Prop, Event, EventEmitter, forceUpdate, State, Method, Host, h } from '@stencil/core';
 import { Input, InputMask, InputOverlay, InputPattern } from '../../functionals';
 import { debounce } from '../../utils';
+import { InputProps } from '../../interface';
 
 @Component({
   tag: 'x-textbox',
   styleUrl: 'x-textbox.scss',
 })
-export class XTextbox {
+export class XTextbox implements InputProps {
 
   private nativeInput: HTMLInputElement;
 
@@ -18,7 +19,15 @@ export class XTextbox {
 
   @Prop() value: string;
 
+  @Prop({
+    reflect: true
+  }) readonly: boolean;
+
   @Prop() label!: string;
+
+  @Prop() fieldId: string;
+
+  @Prop() fieldName: string;
 
   @Prop() required: boolean;
 
@@ -66,11 +75,17 @@ export class XTextbox {
     });
   }
 
+  constructor() {
+    if (!this.fieldId) {
+      this.fieldId = this.fieldName
+    }
+  }
+
   render() {
     return (
       <Host>
         <InputPattern
-          id="abc"
+          id={this.fieldId}
           label="label"
           value={this.value}
           host={this.host}
@@ -83,6 +98,7 @@ export class XTextbox {
           ]}
         >
           <Input
+            id={this.fieldId}
             ref={(el) => {
               if (el != null) {
                 this.nativeInput = el;
@@ -90,7 +106,9 @@ export class XTextbox {
             }}
             type={this.type}
             value={this.value}
+            name={this.fieldName}
             maxLength={this.maxLength}
+            readonly={this.readonly}
             onChange={debounce(() => {
               this.valueChangedHandler();
             })}
