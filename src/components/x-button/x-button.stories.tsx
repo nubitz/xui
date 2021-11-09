@@ -40,6 +40,10 @@ export default {
             control: 'select',
             options: ['submit', 'button']
         },
+        shape: {
+            control: 'select',
+            options: ['circle', 'pill', 'soft', 'none']
+        },
         variant: {
             control: 'select',
             options: ['solid', 'outline', 'none']
@@ -64,17 +68,17 @@ export default {
     },
 };
 
-const Template = (props) => (
+const Template = ({ text, ...props }) => (
     <x-button
         {...props}
     >
-        Button
+        {text}
     </x-button>
 );
 export const Button = Template.bind({});
 
 Button.args = {
     elevated: false,
-    rounded: false,
-    disabled: false
+    disabled: false,
+    text: '[BUTTON]'
 }

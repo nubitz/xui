@@ -80,7 +80,7 @@ export class XTextarea implements InputProps {
           id={this.fieldId}
           label={this.label}
           required={this.required}
-          errors={[]}
+          errors={['Error']}
           value={this.value}
           host={this.host}
           slots={[

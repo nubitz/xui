@@ -3,6 +3,7 @@ x-textbox {
     .input-mask {
       display: flex;
       position: absolute;
+      align-self: center;
       left: 5px;
     }
     .input-overlay {

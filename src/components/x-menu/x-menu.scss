@@ -81,7 +81,7 @@ x-menu {
     transform-origin: initial;
     transform: translate(var(--menu-trans-x, 0), var(--menu-trans-y, 0));
     > :hover {
-      background-color: violet;
+      // background-color: violet;
     }
   }
 }

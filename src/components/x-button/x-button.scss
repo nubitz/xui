@@ -40,12 +40,20 @@ x-button {
     --button-font-color: var(--button-base-color);
   }
 
+  &[shape='circle'] {
+    --button-radius: 50%;
+  }
+  &[shape='pill'] {
+    --button-radius: 1000px;
+  }
+  &[shape='soft'] {
+    --button-radius: 5px;
+  }
+
   &[elevated] {
     --button-box-shadow: 0px 0px 4px 0px rgb(0 0 0/ 30%);
   }
-  &[rounded] {
-    --button-radius: 50%;
-  }
+
   &[disabled] {
     --button-cursor: no-drop;
   }
