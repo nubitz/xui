@@ -25,9 +25,13 @@ export class XButton {
 
   @Prop() type: 'submit' | 'button' = 'button';
 
-  @Prop() color: Colors = 'secondary';
+  @Prop({
+    reflect: true
+  }) color: Colors = 'secondary';
 
-  @Prop() variant: 'solid' | 'outline' | 'none' = 'solid';
+  @Prop({
+    reflect: true
+  }) variant: 'solid' | 'outline' | 'none' = 'solid';
 
   @Prop({
     reflect: true
@@ -35,7 +39,7 @@ export class XButton {
 
   @Prop({
     reflect: true
-  }) rounded: boolean;
+  }) shape: 'circle' | 'pill' | 'soft';
 
   @Prop({
     reflect: true
@@ -46,7 +50,6 @@ export class XButton {
   }) disabled: boolean;
 
   componentWillLoad() {
-    // Overrides
     setCssProperties(this.host, {
       '--button-width': this.width,
       '--button-height': this.height,
