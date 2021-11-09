@@ -4,6 +4,9 @@ x-switch {
 
   &[checked] {
     --switch-on: calc(var(--switch-width) - calc(20px + var(--switch-offset)));
+    .x-switch-line {
+      background-color: green;
+    }
   }
 
   input {
@@ -15,6 +18,7 @@ x-switch {
     width: var(--switch-width);
     border: 1px solid #dadada;
     border-radius: 500px;
+    transition: all 250ms ease;
   }
 
   .x-switch {
