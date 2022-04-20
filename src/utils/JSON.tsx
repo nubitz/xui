@@ -4,7 +4,7 @@ export const fromJSON = (json: string): Object => {
             JSON.parse(json) as any
         );
     }
-    return {};
+    return json;
 }
 
 export const toJSON = (json: Object, pretty: boolean = false): string => {
@@ -15,5 +15,5 @@ export const toJSON = (json: Object, pretty: boolean = false): string => {
                 : JSON.stringify(json, null, 2)
         );
     }
-    return null
+    return json;
 }
