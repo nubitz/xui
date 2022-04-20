@@ -47,55 +47,54 @@ export const Calendar: FunctionalComponent<{
                 weekday: 'long', month: 'long', day: '2-digit', year: 'numeric'
             })
         ];
+
         return (
-            <td key={`cell-${Math.random()}`}>
-                <a
+            <span key={`cell-${Math.random()}`}>
+                <button
                     class={setClasses({
                         day_fill: month != m,
                         current_day: date.toString() == today.toString(),
                     })}
                     key={`link-${d}`}
-                    href="javascript:void(0)"
-                    onClick={props.dayClick}
+                    onClick={() => {
+                        props.dayClick({
+                            day: d,
+                            month: m,
+                            year: y,
+                            title: title
+                        })
+                    }}
                     data-day={d}
                     data-month={m}
                     data-year={y}
                     title={title}>
                     <span>{
-                        d.toString().padStart(2, '0')
+                        d//.toString().padStart(2, '0')
                     }</span>
-                </a>
-            </td>
+                </button>
+            </span>
         );
-    })).map(el => (
-        <tr class="tr">{...el}</tr>
-    ));
+    }));
     return (
-        <table data-month={name} data-year={year} {...props.attrs}>
-            <thead>
-                <tr>
-                    {
-                        [
-                            'Sunday',
-                            'Monday',
-                            'Tuesday',
-                            'Wednesday',
-                            'Thrusday',
-                            'Friday',
-                            'Staturday'
-                        ].map(x => {
-                            const abbr = x.substring(0, 2);
-                            return (
-                                <th class="th" data-name={x} data-abbr={abbr}>
-                                    {x}
-                                </th>
-                            )
-                        })}
-                </tr>
-            </thead>
-            <tbody>
-                {cal}
-            </tbody>
-        </table>
+        <div class="x-calendar" data-month={name} data-year={year} {...props.attrs}>
+            {
+                [
+                    'Sunday',
+                    'Monday',
+                    'Tuesday',
+                    'Wednesday',
+                    'Thrusday',
+                    'Friday',
+                    'Staturday'
+                ].map(x => {
+                    const abbr = x.substring(0, 2);
+                    return (
+                        <span class="x-calendar-weekday" data-name={x} data-abbr={abbr}>
+                            {abbr}
+                        </span>
+                    )
+                })}
+            {cal}
+        </div>
     );
 }
