@@ -71,6 +71,28 @@ export class XTextarea implements InputProps {
     if (!this.fieldId) {
       this.fieldId = this.fieldName;
     }
+
+
+    if (this.maxLength) {
+      const frag = document.createElement('fragment');
+      [
+        { key: 'slot', value: 'input-help' },
+        { key: 'aria-live', value: 'polite' },
+        { key: 'aria-atomic', value: 'true' },
+      ].forEach(({ key, value }) => {
+        frag.setAttribute(key, value);
+      });/*
+      frag.innerHTML = `
+        <span
+          slot="input-help"
+          aria-live="polite"
+          aria-atomic="true"
+        >
+          Characters remaining: ${this.maxLength - this.value?.length || 0}
+        </span>`
+        */
+      this.host.appendChild(frag);
+    }
   }
 
   render() {
@@ -104,17 +126,6 @@ export class XTextarea implements InputProps {
           />
           <slot></slot>
         </InputPattern>
-        {
-          (this.maxLength) && (
-            <span
-              slot="input-help"
-              aria-live="polite"
-              aria-atomic="true"
-            >
-              Characters remaining: {this.maxLength - this.value?.length || 0}
-            </span>
-          )
-        }
       </Host>
     );
   }

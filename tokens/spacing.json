@@ -1,0 +1,47 @@
+{
+  "spacing-xxxs": {
+    "value": "4px",
+    "category": "spacing",
+    "type": "size"
+  },
+  "spacing-xxs": {
+    "value": "8px",
+    "category": "spacing",
+    "type": "size"
+  },
+  "spacing-xs": {
+    "value": "12px",
+    "category": "spacing",
+    "type": "size"
+  },
+  "spacing-s": {
+    "value": "16px",
+    "category": "spacing",
+    "type": "size"
+  },
+  "spacing-m": {
+    "value": "24px",
+    "category": "spacing",
+    "type": "size"
+  },
+  "spacing-l": {
+    "value": "32px",
+    "category": "spacing",
+    "type": "size"
+  },
+  "spacing-xl": {
+    "value": "48px",
+    "category": "spacing",
+    "type": "size"
+  },
+  "spacing-xxl": {
+    "value": "64px",
+    "category": "spacing",
+    "type": "size"
+  },
+  "spacing-xxxl": {
+    "value": "96px",
+    "category": "spacing",
+    "type": "size"
+  }
+}

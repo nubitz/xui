@@ -18,6 +18,15 @@ x-input-styles {
     height: calc(var(--input-styles-height) + 6px);
     width: 100%;
   }
+  /*
+  x-textbox {
+    &[overlay-alignment] {
+      input {
+        color: transparent;
+      }
+    }
+  }
+  */
   &[error] {
     color: red;
     input,

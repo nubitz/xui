@@ -9,7 +9,9 @@ import { InputPattern } from './InputPattern';
 import { Textarea } from './Textarea';
 import { Dropdown } from './Dropdown';
 import { Typography } from './Typography';
-import { Calendar } from './Calendar'
+import { Calendar } from './Calendar';
+import { CalendarMonths } from './CalendarMonths';
+import { CalendarYears } from './CalendarYears';
 
 export {
     Button,
@@ -23,5 +25,7 @@ export {
     Textarea,
     Dropdown,
     Typography,
-    Calendar
+    Calendar,
+    CalendarMonths,
+    CalendarYears
 }

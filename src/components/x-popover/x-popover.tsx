@@ -1,4 +1,4 @@
-import { Component, Element, Prop, Host, h } from '@stencil/core';
+import { Component, Element, Prop, Host, h, Event, EventEmitter } from '@stencil/core';
 import { Placement } from '../../interface';
 import { debounce, setCssProperties } from '../../utils';
 
@@ -18,6 +18,8 @@ export class XPopover {
 
   @Prop() height: string;
 
+  @Prop() headerControl: boolean = false;
+
   @Prop({
     reflect: true,
     mutable: true
@@ -31,39 +33,22 @@ export class XPopover {
     reflect: true
   }) variant: 'outline' | 'elevation' | 'none' = 'outline';
 
-  openHandler() {
-    // this.setPosition();
+  openHandler(): void {
     this.open = !this.open;
-  }
-  /*
-  @Listen('resize', { target: 'window' })
-  resizeHandler() {
-    this.open && this.setPosition();
+    this.openPopover.emit({
+      open: this.open
+    });
   }
 
-  @Listen('scroll', { target: 'document' })
-  scrollHandler() {
-    this.open && this.setPosition();
-  }
-
-  setPosition() {
-
-    const { top, left } = this.origin.getBoundingClientRect()
-
-    setCssProperties(this.host, {
-      '--popover-top': top + 'px',
-      '--popover-left': left + 'px'
-    })
-  }
-    */
+  @Event() openPopover: EventEmitter<{
+    open: boolean
+  }>
 
   componentDidLoad() {
-
     setCssProperties(this.host, {
       '--popover-width': this.width,
       '--popover-height': this.height
     });
-    /// this.setPosition();
   }
 
   render() {
@@ -71,13 +56,15 @@ export class XPopover {
       <Host>
         <span class="origin" ref={el => this.origin = el} />
         <div role="popover" ref={el => this.popover = el} >
-          <x-button
-            class="x-popover--close"
-            variant="none"
-            onClick={debounce(() => this.openHandler())}
-          >
-            <x-icon name="times" solid />
-          </x-button>
+          {this.headerControl && (
+            <x-button
+              class="x-popover--close"
+              variant="none"
+              onClick={debounce(() => this.openHandler())}
+            >
+              <x-icon name="times" solid />
+            </x-button>
+          )}
           <slot />
         </div>
         <span

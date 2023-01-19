@@ -26,6 +26,30 @@ x-popover {
     --popover-trans-x: 5px;
     --popover-trans-y: -50%;
   }
+  &[placement='bottom-right'] {
+    --popover-origin-top: 100%;
+    --popover-origin-left: 100%;
+    --popover-trans-x: -100%;
+    --popover-trans-y: 5px;
+  }
+  &[placement='bottom-left'] {
+    --popover-origin-top: 100%;
+    --popover-origin-left: 0;
+    --popover-trans-x: 0;
+    --popover-trans-y: 5px;
+  }
+  &[placement='left-top'] {
+    --popover-origin-top: 0%;
+    --popover-origin-left: -5px;
+    --popover-trans-x: -100%;
+    --popover-trans-y: 0%;
+  }
+  &[placement='right-top'] {
+    --popover-origin-top: 0;
+    --popover-origin-left: 100%;
+    --popover-trans-x: 5px;
+    --popover-trans-y: 0;
+  }
   &[variant='outline'] {
     --popover-outline: 1px solid #dadada;
   }

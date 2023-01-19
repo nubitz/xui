@@ -2,7 +2,7 @@ import { Component, Element, Prop, Watch, Host, h } from '@stencil/core';
 import { library, findIconDefinition, icon, IconName } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { far } from '@fortawesome/free-regular-svg-icons';
-import { setCssProperties } from '../../utils';
+import { extractAttrs, setCssProperties } from '../../utils';
 
 @Component({
   tag: 'x-icon',
@@ -36,6 +36,9 @@ export class XIcon {
   componentWillLoad() {
 
     this.setColor();
+  }
+
+  render() {
 
     const prefix = this.solid ? 'fas' : 'far';
 
@@ -46,14 +49,23 @@ export class XIcon {
 
     const i = icon(node);
 
-    Array.from(i?.node || []).map(
-      (n: any) => this.host.appendChild(n)
-    );
-  }
+    const svg = Array.from(i?.node || []);
 
-  render() {
     return (
       <Host>
+        {
+          svg.map((el) => {
+            const [svgAttrs, pathAttrs] = [
+              extractAttrs(el as any),
+              extractAttrs(el.children[0] as any)
+            ]
+            return (
+              <svg {...svgAttrs}>
+                <path {...pathAttrs} />
+              </svg>
+            )
+          })
+        }
         <slot></slot>
       </Host>
     );

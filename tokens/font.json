@@ -1,0 +1,22 @@
+{
+  "font-stack-primary": {
+    "value": "'Roboto', sans-serif",
+    "category": "font",
+    "type": "font-stack"
+  },
+  "font-stack-secondary": {
+    "value": "'Open Sans', sans-serif",
+    "category": "font",
+    "type": "font-stack"
+  },
+  "font-stack-tertiary": {
+    "value": "'Lato', sans-serif",
+    "category": "font",
+    "type": "font-stack"
+  },
+  "font-stack-monospace": {
+    "value": "'Courier New', monospace",
+    "category": "font",
+    "type": "font-stack"
+  }
+}

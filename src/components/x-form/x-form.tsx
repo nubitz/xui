@@ -14,8 +14,15 @@ export class XForm {
     console.log(detail)
   }
 
-  submitHandler() {
+  resetForm(): void {
 
+  }
+
+  clearForm(): void {
+
+  }
+
+  submitHandler(): void {
   }
 
   render() {

@@ -1,28 +1,28 @@
 import { FunctionalComponent, h } from '@stencil/core';
 import { CssClassMap } from '../interface';
 
-const setClasses = (props): CssClassMap => ({
-    ['calendar-day']: true,
-    ['current-day']: props.current_day,
-    ['day-fill']: props.day_fill
-})
-
 export const Calendar: FunctionalComponent<{
     startDate?: string,
     endDate?: string,
     month: number,
     year: number,
     month_format?: 'long' | 'short',
-    dayClick?: (evt?: any) => void
-    attrs?: { [x: string]: any }
-}> = (props) => {
+    selectedDate: unknown,
+    dayClick?: (evt?: any) => void,
+    [key: string]: any
+}> = ({ month: m, year: y, value, dayClick, ...attrs }) => {
+
+
+    if (value) {
+        console.log(new Date(value))
+    }
 
     const today = new Date();
     today.setHours(0, 0, 0, 0);
 
     const [d1, d2] = [
-        new Date(props.year, props.month, 1),
-        new Date(props.year, props.month + 1, 0)
+        new Date(y, m, 1),
+        new Date(y, m + 1, 0)
     ];
 
     let [day, month, year, start, length, position, name] = [
@@ -32,9 +32,9 @@ export const Calendar: FunctionalComponent<{
 
     day = day - start;
 
-    const shape = Math.round((length + start + (7 - position)) / 7);
+    const shape = Math.round((length + start + (7 - position)) / 7) * 7;
 
-    const cal = Array(shape).fill(0).map(_ => Array(7).fill(0).map(_ => {
+    const calendar = Array(shape).fill(0).map((_, i) => {
 
         const date = new Date(year, month, day++);
 
@@ -49,15 +49,20 @@ export const Calendar: FunctionalComponent<{
         ];
 
         return (
-            <span key={`cell-${Math.random()}`}>
-                <button
-                    class={setClasses({
+            <span
+                class={setClasses(
+                    {
                         day_fill: month != m,
                         current_day: date.toString() == today.toString(),
-                    })}
+                        weekend: i % 7 == 0 || i % 7 == 6
+                    }
+                )}
+            >
+                <button
                     key={`link-${d}`}
+                    tab-index="-1"
                     onClick={() => {
-                        props.dayClick({
+                        dayClick({
                             day: d,
                             month: m,
                             year: y,
@@ -74,9 +79,9 @@ export const Calendar: FunctionalComponent<{
                 </button>
             </span>
         );
-    }));
+    });
     return (
-        <div class="x-calendar" data-month={name} data-year={year} {...props.attrs}>
+        <div class="x-calendar" data-month={name} data-year={y} {...attrs}>
             {
                 [
                     'Sunday',
@@ -94,7 +99,15 @@ export const Calendar: FunctionalComponent<{
                         </span>
                     )
                 })}
-            {cal}
+            {calendar}
         </div>
     );
 }
+// Rename the classses
+const setClasses = ({ current_day, day_fill, weekend }): CssClassMap => ({
+    ['calendar-day']: true,
+    ['current-day']: current_day,
+    ['day-fill']: day_fill,
+    ['weekend']: weekend,
+    ['selected-day']: false
+})
