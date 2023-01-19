@@ -29,7 +29,16 @@ export default {
         placement: {
             control: {
                 type: 'select',
-                options: ['top', 'left', 'bottom', 'right']
+                options: [
+                    'top',
+                    'left',
+                    'bottom',
+                    'right',
+                    'bottom-right',
+                    'bottom-left',
+                    'left-top',
+                    'right-top'
+                ]
             }
         },
         variant: {

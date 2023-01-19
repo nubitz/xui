@@ -31,7 +31,9 @@ export class XTextbox implements InputProps {
 
   @Prop() required: boolean;
 
-  @Prop() format: string;
+  @Prop({
+    reflect: true
+  }) format: string;
 
   @Prop() mask: string;
 

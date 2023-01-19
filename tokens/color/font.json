@@ -1,9 +1,32 @@
 {
-  "color": {
-    "font": {
-      "base"     : { "value": "{color.base.red.value}" },
-      "secondary": { "value": "{color.base.green.value}" },
-      "tertiary" : { "value": "{color.base.gray.light.value}" }
-    }
+  "color-primary": {
+    "value": "#0074D9",
+    "category": "color",
+    "type": "hex"
+  },
+  "color-secondary": {
+    "value": "#2ECC40",
+    "category": "color",
+    "type": "hex"
+  },
+  "color-tertiary": {
+    "value": "#FF851B",
+    "category": "color",
+    "type": "hex"
+  },
+  "color-text-primary": {
+    "value": "#222222",
+    "category": "color",
+    "type": "hex"
+  },
+  "color-text-secondary": {
+    "value": "#666666",
+    "category": "color",
+    "type": "hex"
+  },
+  "color-text-tertiary": {
+    "value": "#999999",
+    "category": "color",
+    "type": "hex"
   }
 }

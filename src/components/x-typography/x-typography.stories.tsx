@@ -56,7 +56,7 @@ export default {
 };
 
 const Template = (props) => (
-    <div>
+    <x-box sx={{ display: 'flex', 'flex-direction': 'column', gap: '5px' }}>
         <x-typography {...props} variant="h1" text="h1.Heading" />
         <x-typography variant="h2" text="h2.Heading" />
         <x-typography variant="h3" text="h3.Heading" />
@@ -70,7 +70,7 @@ const Template = (props) => (
         <x-typography variant="body2" text="body 2" />
         <x-typography variant="button" text="Button Text" />
         <x-typography variant="caption" text="Cation Text" />
-    </div>
+    </x-box>
 );
 
 export const Typography = Template.bind({});

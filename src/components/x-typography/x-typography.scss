@@ -1,41 +1,62 @@
 x-typography {
+  & > * {
+    all: unset;
+  }
+
   [size='xs'] {
   }
+
   [size='s'] {
   }
+
   [size='m'] {
   }
+
   [size='l'] {
   }
+
   [size='xl'] {
   }
+
   [size='xxl'] {
   }
 
   [variant='h1'] {
   }
+
   [variant='h2'] {
   }
+
   [variant='h3'] {
   }
+
   [variant='h4'] {
   }
+
   [variant='h5'] {
   }
+
   [variant='h6'] {
   }
+
   [variant='title'] {
   }
+
   [variant='subtitle1'] {
   }
+
   [variant='subtitle2'] {
   }
+
   [variant='body1'] {
   }
+
   [variant='body2'] {
   }
+
   [variant='caption'] {
   }
+
   [variant='button'] {
   }
 

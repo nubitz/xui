@@ -1,18 +1,27 @@
 import { FunctionalComponent, h } from '@stencil/core';
+import { CssClassMap } from '../interface';
 
 export const CalendarMonths: FunctionalComponent<{
+    month?: any,
     [key: string]: any,
-    buttonClick?: (evt?) => void
-}> = ({ buttonClick, ...attrs }) => (
+    buttonClick?: ({ month, monthName, element }) => void
+}> = ({ buttonClick, month, ...attrs }) => (
     <div class="x-months"  {...attrs}>
         {
             [
-                'January', 'Febuary', 'March', 'April', 'May', 'June',
-                'July', 'August', 'September', 'November', 'December'
+                'January', 'February', 'March', 'April', 'May', 'June',
+                'July', 'August', 'September', 'October', 'November', 'December'
             ].map((text, index) => {
                 let element: HTMLElement;
+
+                const classes: CssClassMap = {
+                    ['selected-month']: month == text
+                }
+
                 return (
-                    <span>
+                    <span
+                        {...{ class: classes }}
+                    >
                         <button
                             ref={el => element = el}
                             type="button"
@@ -30,6 +39,6 @@ export const CalendarMonths: FunctionalComponent<{
                 )
             })
         }
-    </div>
+    </div >
 );
 

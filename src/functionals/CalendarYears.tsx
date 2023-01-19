@@ -1,32 +1,37 @@
 import { FunctionalComponent, h } from '@stencil/core';
+import { CssClassMap } from '../interface';
 
 export const CalendarYears: FunctionalComponent<{
     year: number,
     range: number,
-    buttonClick?: (evt?) => void
-}> = ({ year, buttonClick, ...attrs }) => (
+    startDate: number
+    buttonClick?: ({ year, element }) => void,
+    [key: string]: any
+}> = ({ startDate, year, range, buttonClick, ...attrs }) => (
 
     <div class="x-years"  {...attrs}>
         {
-            Array(28).fill(year).map((x, index) => {
+            Array(range).fill(startDate).map((x, index) => {
 
                 let element: HTMLElement;
 
-                let year = x + index;
-
+                const y = x + index;
+                const classes: CssClassMap = {
+                    ['selected-year']: year == y
+                }
                 return (
-                    <span>
+                    <span class={classes}>
                         <button
                             ref={el => element = el}
                             type="button"
                             onClick={() => {
                                 buttonClick({
-                                    year: year,
+                                    year: y,
                                     element: element
                                 })
                             }}
                         >
-                            {year}
+                            {y}
                         </button>
                     </span>
                 )
