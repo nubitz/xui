@@ -41,7 +41,6 @@ const Template = (props) => (
         <x-media center src="https://wallpaperaccess.com/full/5381447.jpg" media-index="-2" />
         <x-grid {...props}>
             <div>
-                <h2> WHAT THE FUCK</h2>
                 <x-grid columns="repeat(auto-fill, minmax(350px, 1fr))" >
                     {'12345678'.split('').map(_ => (
                         <x-card>

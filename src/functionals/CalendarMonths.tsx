@@ -39,6 +39,6 @@ export const CalendarMonths: FunctionalComponent<{
                 )
             })
         }
-    </div >
+    </div>
 );
 

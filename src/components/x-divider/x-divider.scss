@@ -21,8 +21,13 @@ x-divider {
     right: 0;
   }
 
-  width: 100%;
-  height: 1px;
+  padding: 5px;
   position: var(--divider-position, absolute);
-  border-bottom: 1px solid var(--border-divider-color);
+
+  span {
+    width: 100%;
+    height: 1px;
+    display: block;
+    border-bottom: 1px solid var(--border-divider-color);
+  }
 }
