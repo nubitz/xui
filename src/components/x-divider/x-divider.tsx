@@ -23,6 +23,7 @@ export class XDivider {
   render() {
     return (
       <Host>
+        <span></span>
         <slot></slot>
       </Host>
     );
